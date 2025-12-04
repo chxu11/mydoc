@@ -7,7 +7,7 @@
 npx create-docusaurus@latest my-tutorial-site classic
 
 # 或使用 npm
-npm init docusaurus@latest my-tutorial-site classic
+pnpm init docusaurus@latest my-tutorial-site classic
 
 # 进入项目目录
 cd my-tutorial-site
