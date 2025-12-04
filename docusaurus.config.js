@@ -3,7 +3,7 @@ const { themes } = require('prism-react-renderer');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'IT知识学习网站',
+  title: '胖头鱼学习网站',
   tagline: '编程教程学习平台',
   favicon: 'img/favicon.ico',
 
@@ -50,7 +50,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'IT知识学习网站',
+        title: '胖头鱼学习网站',
         logo: {
           alt: 'Logo',
           src: 'img/logo.svg',
@@ -105,7 +105,7 @@ const config = {
 
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} IT知识学习网站`,
+        copyright: `Copyright © ${new Date().getFullYear()} 胖头鱼学习网站`,
       },
 
       prism: {
