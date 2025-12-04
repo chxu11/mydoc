@@ -14,6 +14,8 @@ cd my-tutorial-site
 
 # 安装依赖
 npm install
+pnpm run start
+http://localhost:3000/mydoc/
 ```
 
 ## 2. 项目结构
