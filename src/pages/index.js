@@ -7,7 +7,6 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures'; // 首页�
 import Heading from '@theme/Heading'; // 标题组件
 import styles from './index.module.css'; // 导入CSS模块样式
 
-// 首页头部组件 - 展示站点标题和副标题
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -19,7 +18,7 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg" // 按钮样式类
+            className="button button--secondary button--lg"
             to="/docs/intro/1">
               <a href="https://docker.aityp.com/">渡渡鸟镜像同步</a>
           </Link>
@@ -31,10 +30,10 @@ function HomepageHeader() {
 
 // 首页主组件
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext(); // 获取站点配置信息
+  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`} // 页面标题
+      title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
