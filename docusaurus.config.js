@@ -122,11 +122,12 @@ const config = {
       announcementBar: {
         id: 'support_us',
         content:
-          '<a> ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ >Star</a> ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️',
+            '⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ <a href="https://github.com/wxhzhwxhzh/mydoc" target="_blank" rel="noopener noreferrer">学习借鉴</a> ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️',
         backgroundColor: '#fafbfc',
         textColor: '#091E42',
         isCloseable: true,
       },
+
     }),
 };
 
