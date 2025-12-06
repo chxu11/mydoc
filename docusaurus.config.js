@@ -122,7 +122,7 @@ const config = {
       announcementBar: {
         id: 'support_us',
         content:
-          '⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ >Star</a> ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️',
+          '<a> ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ >Star</a> ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️',
         backgroundColor: '#fafbfc',
         textColor: '#091E42',
         isCloseable: true,
