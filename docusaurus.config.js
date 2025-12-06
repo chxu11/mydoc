@@ -7,7 +7,7 @@ const config = {
   tagline: '编程教程学习平台',
   favicon: 'img/favicon.ico',
 
-  url: 'https://your-domain.com',
+  url: 'https://chxu11.github.io/mydoc/',
   // baseUrl  需要改成你的仓库名，如果你启用了GitHub Pages，请改成你的仓库名,默认是/
   baseUrl: 'mydoc',
   // 对于死链接，默认是warn，可以改成其他的选项，比如ignore,throw
@@ -68,18 +68,18 @@ const config = {
             label: '更多',
             position: 'left',
             items: [
-              {
-                label: 'github',
-                to: 'https://github.com/wxhzhwxhzh',
-              },
+              // {
+              //   label: 'github',
+              //   to: 'https://github.com/wxhzhwxhzh',
+              // },
               {
                 label: '文档',
                 to: '/docs/0',
               },
-              {
-                label: 'AIChatOS',
-                href: 'https://cht18.aichatosclx.com/',
-              },
+              // {
+              //   label: 'AIChatOS',
+              //   href: 'https://cht18.aichatosclx.com/',
+              // },
 
             ],
           },
@@ -122,7 +122,7 @@ const config = {
       announcementBar: {
         id: 'support_us',
         content:
-          '⭐️ 如果你喜欢这个网站，请在 <a target="_blank" rel="noopener noreferrer" href="https://github.com/wxhzhwxhzh">GitHub</a> 给我们一个 Star！',
+          '⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️ >Star</a> ⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️',
         backgroundColor: '#fafbfc',
         textColor: '#091E42',
         isCloseable: true,
