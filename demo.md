@@ -5,3 +5,4 @@ sidebar_position: 1
 ---
 
 # 这是一个demo
+### pnpm run start

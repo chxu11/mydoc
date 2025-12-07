@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro/1">
-              <a href="https://docker.aityp.com/">渡渡鸟镜像同步</a>
+              <a href="https://docker.aityp.com/">学习目标</a>
           </Link>
         </div>
       </div>
