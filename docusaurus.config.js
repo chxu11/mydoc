@@ -91,7 +91,7 @@ const config = {
               {label: '🌐 前端 (React)', to: '/docs/react/1'},
               {label: '🦀 Rust', to: '/docs/rust/1'},
               {label: '🐍 Python', to: '/docs/python/1'},
-              {type: 'separator'},
+              {type: 'html', value: '<hr style="margin: 0.4rem 0; border: 0; border-top: 1px solid var(--ifm-color-emphasis-300);">'},
               {label: '📚 建站参考', to: '/docs/docusaurus/1'},
             ],
           },
