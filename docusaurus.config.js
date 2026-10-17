@@ -157,11 +157,11 @@ const config = {
         darkTheme: themes.nightOwl,
       },
 
-      // ---------- 公告栏：写有信息量的文案，而不是纯装饰 ----------
+      // ---------- 公告栏：作者自述式标语，确立站点人格 ----------
       announcementBar: {
-        id: 'welcome_2026',
+        id: 'motto_2026_v1',
         content:
-          '🎯 学习主线：<a href="/mydoc/docs/react/1">前端</a> · <a href="/mydoc/docs/rust/1">Rust</a> · <a href="/mydoc/docs/python/1">Python</a>　|　⭐ 欢迎 <a href="https://github.com/chxu11/mydoc" target="_blank" rel="noopener noreferrer">Star & 贡献</a>',
+          '💭 比较笨，一直学习。要不，叫我「学者」吧。',
         backgroundColor: '#fafbfc',
         textColor: '#091E42',
         isCloseable: true,
