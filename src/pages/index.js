@@ -17,10 +17,11 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
+          {/* 站内跳转：优先「开始学习」，避免把读者直接送到无关外站 */}
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro/1">
-              <a href="https://docker.aityp.com/">学习目标</a>
+            to="/docs/0">
+              开始学习 →
           </Link>
         </div>
       </div>
@@ -33,8 +34,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={siteConfig.title}
+      description="胖头鱼学习网站 · 编程教程学习平台，聚焦前端、Rust、Python 三条学习主线，从入门到实战。">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

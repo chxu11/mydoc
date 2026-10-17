@@ -7,14 +7,16 @@
 npx create-docusaurus@latest my-tutorial-site classic
 
 # 或使用 npm
-pnpm init docusaurus@latest my-tutorial-site classic
+npm init docusaurus@latest my-tutorial-site classic
 
 # 进入项目目录
 cd my-tutorial-site
 
 # 安装依赖
 npm install
-pnpm run start
+
+# 启动本地开发服务器
+npm run start
 http://localhost:3000/mydoc/
 ```
 
@@ -343,15 +345,16 @@ npm run clear
 
 ### 部署到 GitHub Pages
 
-```bash
-# 1. 修改 docusaurus.config.js
-organizationName: 'your-github-username',
-projectName: 'your-repo-name',
-deploymentBranch: 'gh-pages',
+本项目通过 GitHub Actions 自动部署，配置见 `.github/workflows/deploy.yml`：
 
-# 2. 执行部署命令
-GIT_USER=<your-github-username> npm run deploy
-```
+1. 在仓库 `Settings → Pages → Source` 选择 **GitHub Actions**
+2. 确认 `docusaurus.config.js` 中 `url` 与 `baseUrl` 正确：
+   ```js
+   url: 'https://<用户名>.github.io',
+   baseUrl: '/<仓库名>/',
+   ```
+3. 推送到 `main` 分支即自动触发构建与部署（也可在 Actions 页面手动触发）
+4. 访问 `https://<用户名>.github.io/<仓库名>/`
 
 ### 部署到 Vercel / Netlify
 
@@ -376,9 +379,10 @@ title: 新主题
 
 # 4. 保存后自动热重载，查看效果
 
-# 5. 构建并部署
-npm run build
-npm run deploy
+# 5. 提交并推送，GitHub Actions 会自动构建并部署
+git add .
+git commit -m "docs: 新增主题"
+git push
 ```
 
 ## 11. Markdown 增强功能

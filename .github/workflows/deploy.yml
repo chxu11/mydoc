@@ -8,10 +8,16 @@ on:
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
   workflow_dispatch:  # 添加这一行即可手动触发  
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   build:
     name: 1️⃣构建 Docusaurus
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
         with:
