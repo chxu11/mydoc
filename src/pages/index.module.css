@@ -4,11 +4,10 @@
  */
 
 .heroBanner {
-  padding: 5rem 0 6rem;
+  padding: 4.5rem 0 5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
-  /* 深绿渐变主色，替换默认纯色 hero，视觉更立体 */
   background: linear-gradient(135deg, #2e8555 0%, #205d3b 55%, #0f2b1e 100%) !important;
 }
 
@@ -39,7 +38,7 @@
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 
 /* GitHub 副按钮：透明底 + 白描边，和主按钮区分层级 */
@@ -55,42 +54,8 @@
   color: #fff;
 }
 
-/* 数据条：三主线数量，弱化但仍可见 */
-.stats {
-  margin-top: 2.5rem;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.95rem;
-  display: flex;
-  justify-content: center;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
-
-.dot {
-  opacity: 0.55;
-}
-
-/* 关于入口：弱化处理，不抢夺主 CTA */
-.aboutLink {
-  margin-top: 1.25rem;
-  font-size: 0.9rem;
-}
-
-.aboutLink a {
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.35);
-  padding-bottom: 1px;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.aboutLink a:hover {
-  color: #fff;
-  border-bottom-color: rgba(255, 255, 255, 0.7);
-}
-
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 3rem 1rem 4rem;
+    padding: 3rem 1rem 3.5rem;
   }
 }

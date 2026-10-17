@@ -70,36 +70,30 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          // 站点首页
-          {
-            to: '/',
-            label: '🏠 首页',
-            position: 'left',
-          },
           // 文档入口（默认打开文档首页 /docs/0）
           {
             to: '/docs/0',
-            label: '📘 文档',
+            label: '文档',
             position: 'left',
+          },
+          // 教程快捷入口
+          {
+            type: 'dropdown',
+            label: '教程',
+            position: 'left',
+            items: [
+              {label: '前端 (React)', to: '/docs/react/1'},
+              {label: 'Rust', to: '/docs/rust/1'},
+              {label: 'Python', to: '/docs/python/1'},
+              {type: 'html', value: '<hr style="margin: 0.4rem 0; border: 0; border-top: 1px solid var(--ifm-color-emphasis-300);">'},
+              {label: '建站参考', to: '/docs/docusaurus/1'},
+            ],
           },
           // 标签浏览（Docusaurus 自动根据 frontmatter tags 生成）
           {
             to: '/docs/tags',
-            label: '🏷 标签',
+            label: '标签',
             position: 'left',
-          },
-          // 学习方向快捷入口
-          {
-            type: 'dropdown',
-            label: '🎯 学习方向',
-            position: 'left',
-            items: [
-              {label: '🌐 前端 (React)', to: '/docs/react/1'},
-              {label: '🦀 Rust', to: '/docs/rust/1'},
-              {label: '🐍 Python', to: '/docs/python/1'},
-              {type: 'html', value: '<hr style="margin: 0.4rem 0; border: 0; border-top: 1px solid var(--ifm-color-emphasis-300);">'},
-              {label: '📚 建站参考', to: '/docs/docusaurus/1'},
-            ],
           },
           // 右侧：搜索 + 关于 + GitHub
           {
@@ -108,7 +102,7 @@ const config = {
           },
           {
             to: '/about',
-            label: '🖋 关于',
+            label: '关于',
             position: 'right',
           },
           {
@@ -123,26 +117,26 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: '🎯 学习方向',
+            title: '学习方向',
             items: [
-              {label: '🌐 前端 (React)', to: '/docs/react/1'},
-              {label: '🦀 Rust', to: '/docs/rust/1'},
-              {label: '🐍 Python', to: '/docs/python/1'},
+              {label: '前端 (React)', to: '/docs/react/1'},
+              {label: 'Rust', to: '/docs/rust/1'},
+              {label: 'Python', to: '/docs/python/1'},
             ],
           },
           {
-            title: '📚 资源导航',
+            title: '资源导航',
             items: [
-              {label: '📘 文档首页', to: '/docs/0'},
-              {label: '🎯 学习三大目标', to: '/docs/intro/1'},
-              {label: '🏷 标签浏览', to: '/docs/tags'},
-              {label: '⚙️ 建站参考', to: '/docs/docusaurus/1'},
+              {label: '文档首页', to: '/docs/0'},
+              {label: '学习三大目标', to: '/docs/intro/1'},
+              {label: '标签浏览', to: '/docs/tags'},
+              {label: '建站参考', to: '/docs/docusaurus/1'},
             ],
           },
           {
-            title: '🌍 社区 & 关于',
+            title: '社区 & 关于',
             items: [
-              {label: '🖋 关于「学者」', to: '/about'},
+              {label: '关于「学者」', to: '/about'},
               {label: 'GitHub 仓库', href: 'https://github.com/chxu11/mydoc'},
               {label: '提交 Issue', href: 'https://github.com/chxu11/mydoc/issues'},
               {label: '作者主页', href: 'https://github.com/chxu11'},
