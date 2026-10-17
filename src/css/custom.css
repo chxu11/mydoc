@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+/* KaTeX 数学公式样式（给 docs/math 栏目使用） */
+@import 'katex/dist/katex.min.css';
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;
@@ -31,4 +34,49 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------------------------------- */
+/* 纹样与数学栏目：图片主导排版                */
+/* frontmatter 里写 wrapperClassName: pattern-page 或 math-page */
+/* ---------------------------------------- */
+
+/* --- 共享：图片 --- */
+.pattern-page .markdown img,
+.math-page .markdown img {
+  display: block;
+  margin: 1.25rem auto 0.35rem;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  background: #fff;
+}
+
+[data-theme='dark'] .pattern-page .markdown img,
+[data-theme='dark'] .math-page .markdown img {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* --- 共享：图题式短段落（斜体包裹） --- */
+.pattern-page .markdown p > em:only-child,
+.math-page .markdown p > em:only-child {
+  display: block;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--ifm-color-emphasis-600);
+  padding: 0 0 1.5rem;
+}
+
+/* --- 共享：H3 小标题 --- */
+.pattern-page .markdown h3,
+.math-page .markdown h3 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* --- 仅纹样页：正文段落也居中（图为主、字为辅） --- */
+.pattern-page .markdown > p {
+  text-align: center;
 }

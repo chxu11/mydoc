@@ -5,7 +5,8 @@
 
 import {markRead} from '@site/src/utils/progress';
 
-const STATION_RE = /\/docs\/(react|rust|python)\/(\d+)/;
+const STATION_RE =
+  /\/docs\/(react|rust|python|patterns|math|physics|education|poetry)\/(\d+)/;
 
 export function onRouteDidUpdate({location}) {
   if (!location?.pathname) {

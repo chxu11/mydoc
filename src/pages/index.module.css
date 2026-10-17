@@ -4,136 +4,86 @@
 
 .page {
   max-width: 920px;
-  margin: 0 auto;
-  padding: 5rem 1.75rem 4rem;
-}
-
-/* --- 顶部铭牌 --- */
-.mast {
-  margin-bottom: 3.5rem;
-}
-
-.name {
-  font-size: 3.25rem;
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
   margin: 0;
-  color: var(--ifm-font-color-base);
-}
-
-.motto {
-  margin: 0.75rem 0 0;
-  font-size: 1rem;
-  color: var(--ifm-color-emphasis-600);
-  letter-spacing: 0.01em;
+  padding: 4.5rem 1.75rem 4rem;
 }
 
 /* --- 分隔线 --- */
 .rule {
   border: none;
   border-top: 1px solid var(--ifm-color-emphasis-200);
-  margin: 0 0 3rem;
+  margin: 3rem 0 1.75rem;
 }
 
-.page > .rule + .catalog {
-  padding-bottom: 3rem;
+/* --- 落款 --- */
+.signature {
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ifm-color-emphasis-600);
+  letter-spacing: 0.02em;
 }
 
-.page > .catalog + .rule {
-  margin: 0 0 1.75rem;
-}
-
-/* --- 三列目录网格 --- */
-.catalog {
+/* --- 六栏并列网格 --- */
+.grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 1rem;
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 860px) {
-  .catalog {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
   .page {
     padding-top: 3.5rem;
   }
-  .name {
-    font-size: 2.5rem;
+}
+
+@media (max-width: 460px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* --- 每条主线区块 --- */
-.track {
-  min-width: 0;
-}
-
-.trackHead {
+/* --- 栏目卡片 --- */
+.card {
   display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  margin: 0 0 1.15rem;
-  padding-bottom: 0.55rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem 1.25rem 1.35rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--ifm-font-color-base);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
-.trackDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  display: inline-block;
-  flex-shrink: 0;
-}
-
-.trackName {
+.card:hover {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-hover-overlay);
+  transform: translateY(-2px);
+  text-decoration: none;
   color: var(--ifm-font-color-base);
 }
 
-.trackCount {
-  margin-left: auto;
-  font-size: 0.78rem;
-  font-weight: 400;
+.cardEmoji {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.cardName {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.cardMeta {
+  font-size: 0.82rem;
   color: var(--ifm-color-emphasis-500);
-  font-variant-numeric: tabular-nums;
-}
-
-/* --- 章节列表 --- */
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.list > li {
-  margin: 0;
-}
-
-.item {
-  display: block;
-  padding: 0.4rem 0;
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: var(--ifm-font-color-secondary);
-  text-decoration: none;
-  transition: color 0.15s ease, transform 0.15s ease;
-}
-
-.item:hover {
-  color: var(--ifm-color-primary);
-  text-decoration: none;
-}
-
-/* 已访问的章节：更浅一档，不喧宾夺主 */
-.itemRead {
-  color: var(--ifm-color-emphasis-400);
-}
-
-.itemRead:hover {
-  color: var(--ifm-color-primary);
 }
 
 /* --- 底部次要导航 --- */
@@ -163,14 +113,10 @@
 }
 
 /* --- 暗色模式微调 --- */
-:global([data-theme='dark']) .name {
-  color: var(--ifm-color-emphasis-100);
-}
-
 :global([data-theme='dark']) .rule {
   border-top-color: var(--ifm-color-emphasis-300);
 }
 
-:global([data-theme='dark']) .trackHead {
-  border-bottom-color: var(--ifm-color-emphasis-200);
+:global([data-theme='dark']) .card {
+  border-color: var(--ifm-color-emphasis-300);
 }
