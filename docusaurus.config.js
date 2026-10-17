@@ -82,6 +82,12 @@ const config = {
             label: '📘 文档',
             position: 'left',
           },
+          // 标签浏览（Docusaurus 自动根据 frontmatter tags 生成）
+          {
+            to: '/docs/tags',
+            label: '🏷 标签',
+            position: 'left',
+          },
           // 学习方向快捷入口
           {
             type: 'dropdown',
@@ -95,9 +101,14 @@ const config = {
               {label: '📚 建站参考', to: '/docs/docusaurus/1'},
             ],
           },
-          // 右侧：搜索 + GitHub
+          // 右侧：搜索 + 关于 + GitHub
           {
             type: 'search',
+            position: 'right',
+          },
+          {
+            to: '/about',
+            label: '🖋 关于',
             position: 'right',
           },
           {
@@ -110,7 +121,35 @@ const config = {
 
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} 胖头鱼学习网站`,
+        links: [
+          {
+            title: '🎯 学习方向',
+            items: [
+              {label: '🌐 前端 (React)', to: '/docs/react/1'},
+              {label: '🦀 Rust', to: '/docs/rust/1'},
+              {label: '🐍 Python', to: '/docs/python/1'},
+            ],
+          },
+          {
+            title: '📚 资源导航',
+            items: [
+              {label: '📘 文档首页', to: '/docs/0'},
+              {label: '🎯 学习三大目标', to: '/docs/intro/1'},
+              {label: '🏷 标签浏览', to: '/docs/tags'},
+              {label: '⚙️ 建站参考', to: '/docs/docusaurus/1'},
+            ],
+          },
+          {
+            title: '🌍 社区 & 关于',
+            items: [
+              {label: '🖋 关于「学者」', to: '/about'},
+              {label: 'GitHub 仓库', href: 'https://github.com/chxu11/mydoc'},
+              {label: '提交 Issue', href: 'https://github.com/chxu11/mydoc/issues'},
+              {label: '作者主页', href: 'https://github.com/chxu11'},
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} 胖头鱼学习网站 · Built with Docusaurus.`,
       },
 
       prism: {

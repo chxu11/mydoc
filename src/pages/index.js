@@ -17,12 +17,27 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          {/* 站内跳转：优先「开始学习」，避免把读者直接送到无关外站 */}
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/0">
-              开始学习 →
+          {/* 主 CTA：站内开始学习；副 CTA：GitHub Star */}
+          <Link className="button button--secondary button--lg" to="/docs/0">
+            📘 开始学习 →
           </Link>
+          <Link
+            className={clsx('button', 'button--lg', styles.heroGithub)}
+            href="https://github.com/chxu11/mydoc"
+            target="_blank"
+            rel="noopener noreferrer">
+            ⭐ GitHub
+          </Link>
+        </div>
+        <div className={styles.stats}>
+          <span>🌐 前端 · 8 篇</span>
+          <span className={styles.dot} aria-hidden="true">•</span>
+          <span>🦀 Rust · 4 篇</span>
+          <span className={styles.dot} aria-hidden="true">•</span>
+          <span>🐍 Python · 4 篇</span>
+        </div>
+        <div className={styles.aboutLink}>
+          <Link to="/about">🖋 关于「学者」 →</Link>
         </div>
       </div>
     </header>

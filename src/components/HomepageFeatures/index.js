@@ -5,57 +5,64 @@ import styles from './styles.module.css';
 
 const FeatureList = [
     {
-        title: '🌐 前端学习',
-        Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-        // 卡片直达前端主线首页
+        emoji: '🌐',
+        title: '前端学习',
+        meta: '已有 8 篇 · 主线连载中',
         to: '/docs/react/1',
+        accent: '#2e8555',
         description: (
             <>
-                从 HTML/CSS/JavaScript 打底，到 React 组件化与 Hooks，再到 TypeScript、Vite 与工程化。
-                已有 8 篇 React 系列教程，循序渐进，附完整实战 TodoList。
+                8 篇 React 入门：组件与 Props · State · 事件 · 渲染 · TodoList 实战。
+                学习方向（后续会覆盖）：JavaScript 基础、TypeScript、HTML/CSS、工程化。
             </>
         ),
     },
     {
-        title: '🦀 Rust 学习',
-        Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+        emoji: '🦀',
+        title: 'Rust 学习',
+        meta: '4 篇 · 主线连载中',
         to: '/docs/rust/1',
+        accent: '#b7410e',
         description: (
             <>
-                用"严格的空管"比喻理解所有权、借用与生命周期；覆盖 trait、并发、异步与实战。
-                写得出 CLI 工具，也hold得住 axum Web 服务。
+                4 篇基础：介绍 · 环境搭建 · 变量与类型 · ⭐ 所有权。
+                学习方向（后续会覆盖）：借用与生命周期、trait / enum、错误处理、并发与实战。
             </>
         ),
     },
     {
-        title: '🐍 Python 学习',
-        Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+        emoji: '🐍',
+        title: 'Python 学习',
+        meta: '4 篇 · 广度冠军',
         to: '/docs/python/1',
+        accent: '#3776ab',
         description: (
             <>
-                语法 → 数据结构 → 装饰器/生成器三件套 → 标准库与 requests / pandas / FastAPI。
-                从"批量重命名文件"到"训练一个模型"，Python 都能兜底。
+                4 篇基础：介绍 · 环境搭建 · 变量与控制流 · 数据结构与推导式。
+                学习方向（后续会覆盖）：面向对象、装饰器与生成器、标准库与常用三方。
             </>
         ),
     },
 ];
 
-function Feature({Svg, title, description, to}) {
+function Feature({emoji, title, description, to, meta, accent}) {
     return (
-        <div className={clsx('col col--4')}>
-            <div className="text--center">
-                <Svg className={styles.featureSvg} role="img"/>
-            </div>
-            <div className="text--center padding-horiz--md">
-                <Heading as="h3">{title}</Heading>
-                <p>{description}</p>
-                {to && (
-                    <p>
-                        <Link className="button button--outline button--sm" to={to}>
-                            查看教程 →
-                        </Link>
-                    </p>
-                )}
+        <div className={clsx('col', 'col--4')}>
+            <div className={styles.featureCard}>
+                <div
+                    className={styles.featureBadge}
+                    style={{background: accent}}
+                    aria-hidden="true">
+                    {emoji}
+                </div>
+                <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
+                <p className={styles.featureMeta}>{meta}</p>
+                <p className={styles.featureDesc}>{description}</p>
+                <Link
+                    className={clsx('button', 'button--outline', 'button--sm', styles.featureBtn)}
+                    to={to}>
+                    查看教程 →
+                </Link>
             </div>
         </div>
     );

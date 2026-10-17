@@ -1,0 +1,80 @@
+/**
+ * 「关于」页样式（CSS Module，局部作用域）
+ */
+
+.page {
+  padding: 4.5rem 1.25rem 5rem;
+}
+
+.inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 3rem;
+}
+
+/* 诗：开篇引言，克制、宽松 */
+.poem {
+  margin: 0;
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  border-left: 3px solid var(--ifm-color-primary);
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--ifm-font-color-base);
+}
+
+.poem p {
+  margin: 0;
+}
+
+.attribution {
+  display: block;
+  text-align: right;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  margin: 3rem 0;
+}
+
+.motto {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+
+.mottoAccent {
+  color: var(--ifm-color-primary);
+}
+
+.footnote {
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.92rem;
+  margin-top: 2.5rem;
+}
+
+@media screen and (max-width: 996px) {
+  .page {
+    padding: 3rem 1rem 3.5rem;
+  }
+
+  .motto {
+    font-size: 1.25rem;
+  }
+}
