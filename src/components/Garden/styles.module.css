@@ -1,0 +1,151 @@
+.garden {
+  padding: 4rem 0 5rem;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 3rem;
+}
+
+.beds {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 一垄地 */
+.bed {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+}
+
+.bedHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  background: color-mix(in srgb, var(--track-color) 8%, transparent);
+}
+
+.bedName {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--track-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.bedEmoji {
+  font-size: 1.15rem;
+}
+
+.bedProgress {
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ifm-color-emphasis-700);
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+}
+
+/* 土壤：底部一条深色带，像花畦 */
+.soil {
+  position: relative;
+  padding: 1.75rem 1.25rem 1.25rem;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(100% - 14px),
+      var(--ifm-color-emphasis-100) calc(100% - 14px),
+      var(--ifm-color-emphasis-100) 100%
+    );
+}
+
+.plants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+/* 一株植物 */
+.plant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 76px;
+  text-decoration: none;
+  color: var(--ifm-color-emphasis-600);
+  transition: transform 0.2s ease;
+}
+
+.plant:hover {
+  text-decoration: none;
+  transform: translateY(-3px);
+  color: var(--track-color);
+}
+
+.sprout {
+  width: 44px;
+  height: 55px;
+  color: var(--ifm-color-emphasis-300);
+}
+
+.plantLabel {
+  font-size: 0.76rem;
+  line-height: 1.2;
+  margin-top: 0.15rem;
+  white-space: nowrap;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.plant:hover .plantLabel {
+  color: var(--track-color);
+  font-weight: 600;
+}
+
+.plantRead .plantLabel {
+  color: var(--ifm-font-color-base);
+  font-weight: 600;
+}
+
+/* 生长条 */
+.growthBar {
+  margin-top: 1.25rem;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--ifm-color-emphasis-200);
+  overflow: hidden;
+}
+
+.growthFill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--track-color);
+  transition: width 0.45s ease;
+}
+
+@media screen and (max-width: 996px) {
+  .garden {
+    padding: 3rem 0 3.5rem;
+  }
+
+  .plant {
+    width: 64px;
+  }
+}

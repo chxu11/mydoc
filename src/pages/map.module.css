@@ -1,0 +1,62 @@
+.page {
+  padding: 4rem 1.25rem 5rem;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 3rem;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  font-size: 0.88rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.dotOutline,
+.dotFilled,
+.transferHint {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.dotOutline {
+  border: 3px solid var(--ifm-color-primary);
+}
+
+.dotFilled {
+  background: var(--ifm-color-primary);
+}
+
+.transferHint {
+  width: 18px;
+  height: 0;
+  border-radius: 0;
+  border-top: 2px dashed var(--ifm-color-emphasis-400);
+}
+
+.back {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+@media screen and (max-width: 996px) {
+  .page {
+    padding: 3rem 1rem 3.5rem;
+  }
+}

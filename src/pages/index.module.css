@@ -4,19 +4,17 @@
  */
 
 .heroBanner {
-  padding: 4.5rem 0 5rem;
+  padding: 4.5rem 0 4rem;
   text-align: center;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #2e8555 0%, #205d3b 55%, #0f2b1e 100%) !important;
 }
 
-/* 暗色模式下调暗一档，避免过亮 */
 :global([data-theme='dark']) .heroBanner {
   background: linear-gradient(135deg, #17422c 0%, #0f2b1e 55%, #051310 100%) !important;
 }
 
-/* 叠两个柔光圆点，让纯色不呆板 */
 .heroBanner::before {
   content: '';
   position: absolute;
@@ -32,6 +30,13 @@
   z-index: 1;
 }
 
+.kicker {
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.35em;
+  font-size: 0.82rem;
+  margin-bottom: 0.75rem;
+}
+
 .buttons {
   display: flex;
   align-items: center;
@@ -41,21 +46,32 @@
   margin-top: 1.75rem;
 }
 
-/* GitHub 副按钮：透明底 + 白描边，和主按钮区分层级 */
-.heroGithub {
+/* 次要按钮：透明底 + 白描边 */
+.heroGhost {
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.7);
   color: #fff;
 }
 
-.heroGithub:hover {
+.heroGhost:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: #fff;
   color: #fff;
 }
 
+.poem {
+  margin: 3rem 0 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 3rem 1rem 3.5rem;
+    padding: 3rem 1rem 3rem;
+  }
+
+  .poem {
+    margin-top: 2rem;
   }
 }

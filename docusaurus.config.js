@@ -34,6 +34,9 @@ const config = {
     ],
   ],
 
+  // 客户端模块：记录阅读进度，驱动「苗圃」生长与「知识地图」点亮
+  clientModules: [require.resolve('./src/clientModules/trackProgress.js')],
+
   // Docusaurus 3.x 开启 Mermaid 支持（配合上面的 theme-mermaid）
   markdown: {
     mermaid: true,
@@ -70,24 +73,17 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+          // 知识地图（三条主线的可视化导航）
+          {
+            to: '/map',
+            label: '地图',
+            position: 'left',
+          },
           // 文档入口（默认打开文档首页 /docs/0）
           {
             to: '/docs/0',
             label: '文档',
             position: 'left',
-          },
-          // 教程快捷入口
-          {
-            type: 'dropdown',
-            label: '教程',
-            position: 'left',
-            items: [
-              {label: '前端 (React)', to: '/docs/react/1'},
-              {label: 'Rust', to: '/docs/rust/1'},
-              {label: 'Python', to: '/docs/python/1'},
-              {type: 'html', value: '<hr style="margin: 0.4rem 0; border: 0; border-top: 1px solid var(--ifm-color-emphasis-300);">'},
-              {label: '建站参考', to: '/docs/docusaurus/1'},
-            ],
           },
           // 标签浏览（Docusaurus 自动根据 frontmatter tags 生成）
           {
@@ -127,6 +123,7 @@ const config = {
           {
             title: '资源导航',
             items: [
+              {label: '知识地图', to: '/map'},
               {label: '文档首页', to: '/docs/0'},
               {label: '学习三大目标', to: '/docs/intro/1'},
               {label: '标签浏览', to: '/docs/tags'},

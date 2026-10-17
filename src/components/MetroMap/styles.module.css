@@ -1,0 +1,49 @@
+.wrap {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  min-width: 640px;
+  display: block;
+}
+
+.transfer {
+  stroke: var(--ifm-color-emphasis-400);
+  stroke-width: 2.5;
+  stroke-dasharray: 5 5;
+}
+
+.lineName {
+  font-size: 17px;
+  font-weight: 700;
+  fill: currentColor;
+}
+
+.station {
+  cursor: pointer;
+}
+
+.station circle {
+  transition: transform 0.2s ease, filter 0.2s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.station:hover circle {
+  transform: scale(1.25);
+  filter: brightness(1.05);
+}
+
+.stationLabel {
+  font-size: 14px;
+  fill: var(--ifm-font-color-base);
+  pointer-events: none;
+}
+
+.station:hover .stationLabel {
+  font-weight: 700;
+}
