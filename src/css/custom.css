@@ -80,3 +80,111 @@
 .pattern-page .markdown > p {
   text-align: center;
 }
+
+/* ---------------------------------------- */
+/* 诗歌文章栏目：原文由 <Poem> 组件排版        */
+/* 这里美化开头的「作者信息」引用块            */
+/* frontmatter 写 wrapperClassName: poetry-page */
+/* ---------------------------------------- */
+.poetry-page .markdown > blockquote:first-of-type {
+  border-left: 3px solid var(--ifm-color-emphasis-300);
+  border-radius: 0 8px 8px 0;
+  background: var(--ifm-color-emphasis-100);
+  padding: 0.85rem 1.1rem;
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+[data-theme='dark'] .poetry-page .markdown > blockquote:first-of-type {
+  background: var(--ifm-background-surface-color);
+}
+
+/* ---------------------------------------- */
+/* 全站通用：正文引用块（callout）统一美化    */
+/* 用于编程/数学/教育等栏目的比喻与要点提示  */
+/* ---------------------------------------- */
+.markdown > blockquote {
+  border-left: 3px solid var(--ifm-color-primary);
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 0 8px 8px 0;
+  padding: 0.7rem 1.05rem;
+  margin: 1.2rem 0;
+  color: var(--ifm-font-color-base);
+  font-style: normal;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme='dark'] .markdown > blockquote {
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------------------------------------- */
+/* 数学栏目：命题/证明/一句话带走 三类专业盒子  */
+/* 内容用内置 admonition：:::tip[命题] 等      */
+/* ---------------------------------------- */
+.math-page .theme-admonition {
+  border: none;
+  border-left: 4px solid var(--ifm-color-primary);
+  border-radius: 0 10px 10px 0;
+  background: var(--ifm-color-emphasis-100);
+  padding: 0.5rem 1.15rem 0.75rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  color: var(--ifm-font-color-base);
+}
+
+.math-page .theme-admonition h5 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.math-page .theme-admonition-tip {
+  border-left-color: var(--ifm-color-primary);
+}
+.math-page .theme-admonition-tip h5 {
+  color: var(--ifm-color-primary-darkest);
+}
+/* 命题陈述：衬线、稍大，突出“要证明什么” */
+.math-page .theme-admonition-tip .admonitionContent_S1Gt,
+.math-page .theme-admonition-tip p {
+  font-family: 'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', Georgia, serif;
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
+
+/* 证明：中性蓝，正文常规排版 */
+.math-page .theme-admonition-note {
+  border-left-color: #3776ab;
+}
+.math-page .theme-admonition-note h5 {
+  color: #2b5f8a;
+}
+
+/* 一句话带走：暖色强调，结论感 */
+.math-page .theme-admonition-info {
+  border-left-color: #ef6c00;
+  background: var(--ifm-color-emphasis-100);
+}
+.math-page .theme-admonition-info h5 {
+  color: #b35100;
+}
+
+[data-theme='dark'] .math-page .theme-admonition {
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+[data-theme='dark'] .math-page .theme-admonition-note h5 { color: #79b8e6; }
+[data-theme='dark'] .math-page .theme-admonition-info h5 { color: #ffb265; }
+
+/* ===== 导航栏品牌区：站名后的低调署名 ===== */
+.navbar__title::after {
+  content: ' · 叫我「学者」';
+  font-weight: 400;
+  font-size: 0.76em;
+  letter-spacing: 0.02em;
+  color: var(--ifm-color-emphasis-600);
+  white-space: nowrap;
+}
