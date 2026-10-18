@@ -87,6 +87,10 @@ export const tracks = [
     stations: [
       {pos: 1, short: '地图', title: '1. 物理地图', to: '/docs/physics/1'},
       {pos: 2, short: '力学', title: '2. 从牛顿到波', to: '/docs/physics/2'},
+      {pos: 3, short: '电磁', title: '3. 电磁与光', to: '/docs/physics/3'},
+      {pos: 4, short: '热熵', title: '4. 热与熵', to: '/docs/physics/4'},
+      {pos: 5, short: '相对论', title: '5. 相对论', to: '/docs/physics/5'},
+      {pos: 6, short: '量子', title: '6. 量子力学', to: '/docs/physics/6'},
     ],
   },
   {
@@ -97,6 +101,11 @@ export const tracks = [
     stations: [
       {pos: 1, short: '学法', title: '1. 怎么学一门硬知识', to: '/docs/education/1'},
       {pos: 2, short: '记忆', title: '2. 间隔重复与记忆', to: '/docs/education/2'},
+      {pos: 3, short: '专注', title: '3. 专注与深度工作', to: '/docs/education/3'},
+      {pos: 4, short: '笔记', title: '4. 做笔记的方法', to: '/docs/education/4'},
+      {pos: 5, short: '读书', title: '5. 怎么读一本难书', to: '/docs/education/5'},
+      {pos: 6, short: '项目', title: '6. 项目驱动学习', to: '/docs/education/6'},
+      {pos: 7, short: '育儿', title: '7. 育儿语录', to: '/docs/education/7'},
     ],
   },
   {
@@ -112,6 +121,8 @@ export const tracks = [
       {pos: 5, short: '张岱', title: '5. 湖心亭看雪 · 张岱', to: '/docs/poetry/5'},
       {pos: 6, short: '归有光', title: '6. 项脊轩志 · 归有光', to: '/docs/poetry/6'},
       {pos: 7, short: '史铁生', title: '7. 我与地坛 · 史铁生', to: '/docs/poetry/7'},
+      {pos: 8, short: '家书', title: '8. 洛克菲勒给儿子的信', to: '/docs/poetry/8'},
+      {pos: 9, short: '格言', title: '9. 格言集·三种文化的对仗', to: '/docs/poetry/9'},
     ],
   },
 ];

@@ -10,9 +10,9 @@ const COLUMNS = [
   {emoji: '💻', name: '编程', to: '/docs/0', meta: '前端 · Rust · Python · Java'},
   {emoji: '🎨', name: '纹样', to: '/docs/patterns/1', meta: '6 篇 · 世界经典图案'},
   {emoji: '📐', name: '数学', to: '/docs/math/1', meta: '11 篇 · 经典证明与可视化'},
-  {emoji: '🔭', name: '物理', to: '/docs/physics/1', meta: '2 篇 · 从牛顿到波'},
-  {emoji: '🎓', name: '教育', to: '/docs/education/1', meta: '2 篇 · 学习方法与记忆'},
-  {emoji: '📖', name: '诗歌文章', to: '/docs/poetry/1', meta: '7 篇 · 唐宋诗词与散文'},
+  {emoji: '🔭', name: '物理', to: '/docs/physics/1', meta: '6 篇 · 力学→电磁→热→相对论→量子'},
+  {emoji: '🎓', name: '教育', to: '/docs/education/1', meta: '7 篇 · 学习方法与育儿语录'},
+  {emoji: '📖', name: '诗歌文章', to: '/docs/poetry/1', meta: '9 篇 · 诗词古文与家书格言'},
 ];
 
 export default function Home() {
