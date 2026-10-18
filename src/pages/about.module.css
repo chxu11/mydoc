@@ -1,34 +1,23 @@
 /**
  * 「关于」页样式（CSS Module，局部作用域）
+ * 极简纵列：《礼物》全诗 → 右下角署名。无装饰。
  */
 
 .page {
-  padding: 4.5rem 1.25rem 5rem;
+  padding: 4rem 1.25rem 5rem;
 }
 
 .inner {
-  max-width: 640px;
+  max-width: 560px;
   margin: 0 auto;
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  text-align: center;
-  color: var(--ifm-color-emphasis-600);
-  margin-bottom: 3rem;
-}
-
-/* 诗：开篇引言，克制、宽松 */
+/* 诗：正文唯一主角——衬线、放大半号、行距与字距都放开 */
 .poem {
-  margin: 0;
-  padding: 1.5rem 0 1.5rem 1.5rem;
-  border-left: 3px solid var(--ifm-color-primary);
-  font-size: 1.05rem;
-  line-height: 2;
+  font-family: 'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', serif;
+  font-size: 1.12rem;
+  line-height: 2.35;
+  letter-spacing: 0.05em;
   color: var(--ifm-font-color-base);
 }
 
@@ -37,36 +26,25 @@
 }
 
 .attribution {
-  display: block;
-  text-align: right;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: var(--ifm-color-emphasis-600);
+  margin-top: 1.25rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--ifm-color-emphasis-500);
 }
 
-.divider {
-  border: 0;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-  margin: 3rem 0;
-}
-
-.motto {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 2;
-  letter-spacing: 0.04em;
-}
-
-.mottoAccent {
-  color: var(--ifm-color-primary);
-}
-
-.footnote {
-  text-align: center;
-  color: var(--ifm-color-emphasis-600);
+/* 署名：靠右下角，像信末的手写签名 */
+.signature {
+  margin-top: 5rem;
   font-size: 0.92rem;
-  margin-top: 2.5rem;
+  line-height: 1.9;
+  color: var(--ifm-color-emphasis-600);
+  text-align: right;
+}
+
+.signatureAccent {
+  color: var(--ifm-color-primary);
+  font-weight: 700;
 }
 
 @media screen and (max-width: 996px) {
@@ -74,7 +52,7 @@
     padding: 3rem 1rem 3.5rem;
   }
 
-  .motto {
-    font-size: 1.25rem;
+  .signature {
+    margin-top: 4rem;
   }
 }

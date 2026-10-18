@@ -108,12 +108,6 @@ const config = {
               {label: '📖 诗歌文章', to: '/docs/poetry/1'},
             ],
           },
-          // 标签浏览（Docusaurus 自动根据 frontmatter tags 生成）
-          {
-            to: '/docs/tags',
-            label: '标签',
-            position: 'left',
-          },
           // 右侧：搜索 + 关于 + GitHub
           {
             type: 'search',
@@ -154,7 +148,6 @@ const config = {
               {label: '知识地图', to: '/map'},
               {label: '文档首页', to: '/docs/0'},
               {label: '学习三大目标', to: '/docs/intro/1'},
-              {label: '标签浏览', to: '/docs/tags'},
               {label: '建站参考', to: '/docs/docusaurus/1'},
             ],
           },

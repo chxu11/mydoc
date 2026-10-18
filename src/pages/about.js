@@ -1,5 +1,4 @@
 import Layout from '@theme/Layout';
-import Heading from '@theme/Heading';
 
 import styles from './about.module.css';
 
@@ -19,15 +18,10 @@ export default function About() {
   return (
     <Layout
       title="关于「学者」"
-      description="关于「学者」：一首米沃什的《礼物》，和一句「比较笨，一直学习」的自白。">
+      description="关于「学者」：米沃什《礼物》，与一句「比较笨，一直学习」的自白。">
       <main className={styles.page}>
         <div className={styles.inner}>
-          <Heading as="h1" className={styles.title}>
-            关于「学者」
-          </Heading>
-          <p className={styles.subtitle}>一首诗，一句自白</p>
-
-          <blockquote className={styles.poem}>
+          <div className={styles.poem}>
             <p>
               {poemLines.map((line) => (
                 <span key={line}>
@@ -36,22 +30,11 @@ export default function About() {
                 </span>
               ))}
             </p>
-            <cite className={styles.attribution}>——米沃什《礼物》（西川 译）</cite>
-          </blockquote>
+            <div className={styles.attribution}>——米沃什《礼物》（西川 译）</div>
+          </div>
 
-          <hr className={styles.divider} />
-
-          <p className={styles.motto}>
-            比较笨。
-            <br />
-            一直学习。
-            <br />
-            要不，叫我
-            <span className={styles.mottoAccent}>「学者」</span>吧。
-          </p>
-
-          <p className={styles.footnote}>
-            这里的每篇教程，都是学一点、写一点的记录。
+          <p className={styles.signature}>
+            比较笨，一直学习，要不，叫我<span className={styles.signatureAccent}>「学者」</span>吧。
           </p>
         </div>
       </main>
