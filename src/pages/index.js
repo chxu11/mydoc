@@ -48,6 +48,12 @@ export default function Home() {
 
         <hr className={styles.rule} />
 
+        <p className={styles.motto}>
+          绵绵用力，久久为功
+          <br />
+          人生缓缓，徐徐图之
+        </p>
+
         <p className={styles.signature}>比较笨，一直学习。</p>
 
         <nav className={styles.foot} aria-label="站点次要导航">

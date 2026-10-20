@@ -15,6 +15,15 @@
   margin: 3rem 0 1.75rem;
 }
 
+/* --- 箴言 --- */
+.motto {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1.9;
+  letter-spacing: 0.08em;
+  color: var(--ifm-color-emphasis-700);
+}
+
 /* --- 落款 --- */
 .signature {
   margin: 0 0 1.5rem;
