@@ -1,6 +1,7 @@
 /**
  * 各学习主线的站点数据。
- * 用于「知识地图」的渲染与阅读进度点亮。
+ * 用于「知识地图」的渲染与阅读进度点亮，同时是栏目篇数的唯一事实源：
+ * 首页卡片与文档首页的「已上线 N 篇」均由此派生（countOf），新增篇目不需手改计数。
  * short 为地图上的短标签，title 为完整标题，to 为文档路由。
  * kind: 'code' 编程线（共有「介绍/环境」换乘站）；'knowledge' 知识线（各站独立）。
  */
@@ -128,3 +129,6 @@ export const tracks = [
 ];
 
 export const totalStations = tracks.reduce((n, t) => n + t.stations.length, 0);
+
+/** 按 track id 取篇数（stations 长度）；id 不存在时返回 0。 */
+export const countOf = (id) => tracks.find((t) => t.id === id)?.stations.length ?? 0;

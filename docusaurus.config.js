@@ -1,5 +1,6 @@
 // @ts-check
 const { themes } = require('prism-react-renderer');
+const {navbarDropdownItems, footerLearningItems} = require('./src/data/columns.cjs');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -92,21 +93,12 @@ const config = {
             label: '文档',
             position: 'left',
           },
-          // 六大学习栏目（下拉直达各栏首页）
+          // 六大学习栏目（下拉直达各栏首页；清单来自 src/data/columns.cjs）
           {
             type: 'dropdown',
             label: '栏目',
             position: 'left',
-            items: [
-              {label: '💻 编程 · 前端 (React)', to: '/docs/react/1'},
-              {label: '💻 编程 · Rust', to: '/docs/rust/1'},
-              {label: '💻 编程 · Python', to: '/docs/python/1'},
-              {label: '🎨 纹样', to: '/docs/patterns/1'},
-              {label: '📐 数学', to: '/docs/math/1'},
-              {label: '🔭 物理', to: '/docs/physics/1'},
-              {label: '🎓 教育', to: '/docs/education/1'},
-              {label: '📖 诗歌文章', to: '/docs/poetry/1'},
-            ],
+            items: navbarDropdownItems,
           },
           // 右侧：搜索 + 关于 + GitHub
           {
@@ -131,16 +123,7 @@ const config = {
         links: [
           {
             title: '学习方向',
-            items: [
-              {label: '前端 (React)', to: '/docs/react/1'},
-              {label: 'Rust', to: '/docs/rust/1'},
-              {label: 'Python', to: '/docs/python/1'},
-              {label: '纹样', to: '/docs/patterns/1'},
-              {label: '数学证明', to: '/docs/math/1'},
-              {label: '物理', to: '/docs/physics/1'},
-              {label: '教育', to: '/docs/education/1'},
-              {label: '诗歌文章', to: '/docs/poetry/1'},
-            ],
+            items: footerLearningItems,
           },
           {
             title: '资源导航',

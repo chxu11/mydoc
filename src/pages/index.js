@@ -1,18 +1,22 @@
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import {tracks} from '@site/src/data/tracks';
+import {tracks, countOf} from '@site/src/data/tracks';
+import {columns} from '@site/src/data/columns.cjs';
 import {useProgress} from '@site/src/hooks/useProgress';
 import styles from './index.module.css';
 
-/* 六大栏目，彼此并列 */
+/* 六大栏目，彼此并列：入口与文案来自 columns.cjs，篇数由 tracks.js 派生 */
 const COLUMNS = [
   {emoji: '💻', name: '编程', to: '/docs/0', meta: '前端 · Rust · Python · Java'},
-  {emoji: '🎨', name: '纹样', to: '/docs/patterns/1', meta: '6 篇 · 世界经典图案'},
-  {emoji: '📐', name: '数学', to: '/docs/math/1', meta: '11 篇 · 经典证明与可视化'},
-  {emoji: '🔭', name: '物理', to: '/docs/physics/1', meta: '6 篇 · 力学→电磁→热→相对论→量子'},
-  {emoji: '🎓', name: '教育', to: '/docs/education/1', meta: '7 篇 · 学习方法与育儿语录'},
-  {emoji: '📖', name: '诗歌文章', to: '/docs/poetry/1', meta: '9 篇 · 诗词古文与家书格言'},
+  ...columns
+    .filter((c) => c.cardHint)
+    .map((c) => ({
+      emoji: c.emoji,
+      name: c.name,
+      to: c.to,
+      meta: `${countOf(c.id)} 篇 · ${c.cardHint}`,
+    })),
 ];
 
 export default function Home() {
