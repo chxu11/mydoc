@@ -78,6 +78,7 @@ export const tracks = [
       {pos: 9, short: '几何', title: '9. 经典几何', to: '/docs/math/9'},
       {pos: 10, short: '黎曼', title: '10. 黎曼几何', to: '/docs/math/10'},
       {pos: 11, short: '欧拉', title: '11. 欧拉公式', to: '/docs/math/11'},
+      {pos: 12, short: '伴读', title: '12. 伴读：数学精英', to: '/docs/math/12'},
     ],
   },
   {
@@ -92,6 +93,7 @@ export const tracks = [
       {pos: 4, short: '热熵', title: '4. 热与熵', to: '/docs/physics/4'},
       {pos: 5, short: '相对论', title: '5. 相对论', to: '/docs/physics/5'},
       {pos: 6, short: '量子', title: '6. 量子力学', to: '/docs/physics/6'},
+      {pos: 7, short: '伴读', title: '7. 伴读：超越时空', to: '/docs/physics/7'},
     ],
   },
   {
@@ -124,6 +126,9 @@ export const tracks = [
       {pos: 7, short: '史铁生', title: '7. 我与地坛 · 史铁生', to: '/docs/poetry/7'},
       {pos: 8, short: '家书', title: '8. 洛克菲勒给儿子的信', to: '/docs/poetry/8'},
       {pos: 9, short: '格言', title: '9. 格言集·三种文化的对仗', to: '/docs/poetry/9'},
+      {pos: 10, short: '立心', title: '10. 士人语录·把一生压成一句', to: '/docs/poetry/10'},
+      {pos: 11, short: '名联', title: '11. 名联殿·一联盖一生', to: '/docs/poetry/11'},
+      {pos: 12, short: '房龙', title: '12. 人文伴读：房龙', to: '/docs/poetry/12'},
     ],
   },
 ];
