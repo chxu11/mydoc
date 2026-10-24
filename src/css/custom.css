@@ -68,6 +68,17 @@
   padding: 0 0 1.5rem;
 }
 
+/* --- 表格尾行：colspan 合并的阅读建议（见 docs/math/01 等） --- */
+.markdown table tr.table-footer-row td {
+  background: var(--ifm-color-emphasis-100);
+  font-size: 0.9rem;
+  border-top: 2px solid var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .markdown table tr.table-footer-row td {
+  background: var(--ifm-background-surface-color);
+}
+
 /* --- 共享：H3 小标题 --- */
 .pattern-page .markdown h3,
 .math-page .markdown h3 {

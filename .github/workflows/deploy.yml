@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  # PR 阶段提前拦截：死链 / frontmatter 契约失败在合并前就报错（不部署）
+  pull_request:
+    branches:
+      - main
     # 如果你想进一步定义触发器、路径等，可以查看 GitHub Actions 文档
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
   workflow_dispatch:  # 添加这一行即可手动触发  
@@ -33,6 +37,7 @@ jobs:
         run: npm run build
 
       - name: 上传构建产物
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: build
@@ -40,6 +45,8 @@ jobs:
   deploy:
     name: 2️⃣部署到 GitHub Pages
     needs: build
+    # PR 只跑构建门禁，不部署
+    if: github.event_name == 'push'
 
     # 授予 GITHUB_TOKEN 部署到 Pages 所需的权限
     permissions:

@@ -22,8 +22,6 @@ const config = {
   themes: [
     // 图表：在 Markdown 中直接写 ```mermaid 代码块即可渲染
     '@docusaurus/theme-mermaid',
-    // 交互式代码块：在 ```js live 中编辑并即时运行
-    '@docusaurus/theme-live-codeblock',
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
@@ -37,6 +35,9 @@ const config = {
 
   // 客户端模块：记录阅读进度，驱动「苗圃」生长与「知识地图」点亮
   clientModules: [require.resolve('./src/clientModules/trackProgress.js')],
+
+  // 本地插件：start/build 启动与 dev 每次重编译前，重扫 docs frontmatter 生成地图数据（src/data/tracks.json）
+  plugins: [require.resolve('./scripts/gen-tracks-plugin')],
 
   // Docusaurus 3.x 开启 Mermaid 支持（配合上面的 theme-mermaid）
   // 注：docs/math/* 里的行内公式统一用 $ ... $ 而不是 \( ... \)：
