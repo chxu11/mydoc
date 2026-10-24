@@ -1,0 +1,73 @@
+---
+title: 4.日本纹样
+slug: '4'
+mapShort: 和风
+description: 麻叶、市松、青海波——江户时代最流行的三种小纹。看图学名，从 Kumiko 木格栅到浮世绘、从和服到县徽。
+keywords: [麻叶纹, 市松, 青海波, asanoha, ichimatsu, seigaiha, 日本纹样]
+tags: [纹样]
+wrapperClassName: pattern-page
+---
+
+# 4. 麻叶 · 市松 · 青海波
+
+*江户小纹三巨头。三种几何、三种性格：成长的、时尚的、平静的。*
+
+---
+
+### 麻叶纹 · Asanoha（前 8 世纪已有，江户普及）
+
+![麻叶 Kumiko](https://commons.wikimedia.org/wiki/Special:FilePath/Asanoha_Kumiko_Pattern.svg?width=900)
+
+*六角放射的星形，像展开的大麻叶。农民把婴儿背带织上它，祈求孩子"像麻一样长得又快又直"。木格窗（Kumiko）里也叫同名图案。*
+
+---
+
+### 麻叶 + 七宝 · 复合变体
+
+![Shippo-Asanoha](https://commons.wikimedia.org/wiki/Special:FilePath/Shippo_Asanoha_Kumiko_Pattern.svg?width=900)
+
+*麻叶叠在七宝（相连的圆环）之上，是 Kumiko 木工里最考验手艺的图案之一。*
+
+---
+
+### 市松 · Ichimatsu（江户，18 世纪）
+
+![市松方格](https://commons.wikimedia.org/wiki/Special:FilePath/Ichimatsu.JPG?width=900)
+
+*黑白方格交错。得名于江户歌舞伎演员 **佐野川市松**——他 1741 年在《真山崎天狗缘》里穿了一身这种图案戏服，全城模仿，两个月内"市松"成了方格纹的通用名。今天日本警车、出租车、奥运会视觉都还在用。*
+
+---
+
+### 青海波 · Seigaiha（6 世纪经朝鲜传入，室町–江户定型）
+
+![青海波示意](https://commons.wikimedia.org/wiki/Special:FilePath/Seigaiha.svg?width=900)
+
+*层层同心扇形排列如海面波纹。名字来自"波斯（青海在古日语借自波斯音）传来的波浪纹"，实际经由丝绸之路与朝鲜半岛传入。寓意：**风平浪静的日常**。*
+
+---
+
+### 实物版 · 青海波织物
+
+![青海波代表例](https://commons.wikimedia.org/wiki/Special:FilePath/%E6%97%A5%E6%9C%AC%E3%81%AE%E4%BC%9D%E7%B5%B1%E6%96%87%E6%A7%98%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E4%BB%A3%E8%A1%A8%E4%BE%8B%EF%BC%9C%E9%9D%92%E6%B5%B7%E6%B3%A2%EF%BC%8E.jpg?width=900)
+
+*和服振袖上的青海波——层叠的扇形在曲面上会自然变形，织工要提前算好。*
+
+---
+
+## 一分钟记住三种
+
+| 纹样 | 母题 | 情绪 |
+|---|---|---|
+| **麻叶** | 六角星 · 放射对称 | 生长、护佑 |
+| **市松** | 方格 · 明暗交替 | 都市、时尚 |
+| **青海波** | 扇形 · 平移重复 | 宁静、悠远 |
+
+**彩蛋**：葛饰北斋《神奈川冲浪里》里的浪花用了青海波的构图逻辑——把传统纹样推到了世界名画的高度。
+
+---
+
+**上一**：[Greek Key 希腊回纹](./03-greek-key.md)　·　**下一**：[Girih · 伊斯兰无限 →](./05-girih.md)
+
+---
+
+*图片来自 Wikimedia Commons，公有领域 / CC 自由许可。*

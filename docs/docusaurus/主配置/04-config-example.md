@@ -1,0 +1,735 @@
+---
+title: docusaurus.config.js配置示例
+slug: '4'
+description: docusaurus.config.js 配置示例合集：导航栏、页脚、公告栏、搜索、SEO 等可直接复制的配置片段。
+keywords: [Docusaurus, 配置示例, 导航栏, 页脚, SEO]
+tags: [建站参考]
+---
+
+本文给出 `docusaurus.config.js` 的完整配置示例，可直接复制改写使用。
+
+## 配置文件结构
+
+```javascript
+/**
+ * docusaurus.config.js 完整配置指南
+ * Docusaurus 主配置文件详解
+ */
+
+// @ts-check
+const {themes} = require('prism-react-renderer');
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
+  
+  // ============================================
+  // 1. 站点元数据 (Site Metadata)
+  // ============================================
+  
+  // 网站标题
+  title: '胖头鱼学习网站',
+  
+  // 网站标语/副标题
+  tagline: '全面的编程教程学习平台',
+  
+  // 网站图标
+  favicon: 'img/favicon.ico',
+  
+  // 生产环境 URL（必填）
+  url: 'https://your-domain.com',
+  
+  // 基础路径（默认为 '/'）
+  // 如果部署在 https://example.com/docs/ 则设置为 '/docs/'
+  baseUrl: '/',
+  
+  // ============================================
+  // 2. GitHub Pages 部署配置
+  // ============================================
+  
+  // GitHub 用户名或组织名
+  organizationName: 'your-github-username',
+  
+  // GitHub 仓库名
+  projectName: 'your-repo-name',
+  
+  // 部署分支（GitHub Pages 使用）
+  deploymentBranch: 'gh-pages',
+  
+  // 是否在 URL 路径末尾添加斜杠
+  trailingSlash: false,
+  
+  // ============================================
+  // 3. 国际化配置 (i18n)
+  // ============================================
+  
+  i18n: {
+    // 默认语言
+    defaultLocale: 'zh-CN',
+    
+    // 支持的语言列表
+    locales: ['zh-CN', 'en'],
+    
+    // 语言配置
+    localeConfigs: {
+      'zh-CN': {
+        label: '简体中文',
+        direction: 'ltr',
+        htmlLang: 'zh-CN',
+        calendar: 'gregory',
+        path: 'zh-CN',
+      },
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+        path: 'en',
+      },
+    },
+  },
+
+  // ============================================
+  // 4. 行为配置
+  // ============================================
+  
+  // 损坏链接的处理方式
+  onBrokenLinks: 'throw',     // 'throw' | 'warn' | 'ignore'
+  onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'warn',
+  onDuplicateRoutes: 'warn',
+  
+  // ============================================
+  // 5. 主题、插件和预设配置
+  // ============================================
+  
+  presets: [
+    [
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
+        // ---------- 文档配置 ----------
+        docs: {
+          // 侧边栏配置文件路径
+          sidebarPath: require.resolve('./sidebars.js'),
+          
+          // 编辑链接配置
+          editUrl: 'https://github.com/your-repo/edit/main/',
+          
+          // 显示最后更新时间
+          showLastUpdateTime: true,
+          
+          // 显示最后更新作者
+          showLastUpdateAuthor: true,
+          
+          // 文档路由基础路径
+          routeBasePath: 'docs',
+          
+          // 包含的文件模式
+          include: ['**/*.md', '**/*.mdx'],
+          
+          // 排除的文件模式
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+          ],
+          
+          // 文档插件 ID（多实例时使用）
+          id: 'default',
+          
+          // 文档根路径
+          path: 'docs',
+          
+          // 侧边栏可折叠
+          sidebarCollapsible: true,
+          
+          // 侧边栏默认折叠
+          sidebarCollapsed: true,
+          
+          // 面包屑导航
+          breadcrumbs: true,
+          
+          // 版本配置
+          versions: {
+            current: {
+              label: '2.0.0',
+              path: 'next',
+            },
+          },
+          
+          // 仅包含当前版本
+          onlyIncludeVersions: ['current', '1.0.0'],
+          
+          // 最后一个版本
+          lastVersion: 'current',
+          
+          // 文档项前缀
+          docItemComponent: '@theme/DocItem',
+          
+          // 文档标签基础路径
+          docTagsListComponent: '@theme/DocTagsListPage',
+          
+          // 标签路由基础路径
+          tagsBasePath: 'tags',
+        },
+        
+        // ---------- 博客配置 ----------
+        blog: {
+          // 显示阅读时间
+          showReadingTime: true,
+          
+          // 编辑链接
+          editUrl: 'https://github.com/your-repo/edit/main/',
+          
+          // 博客路由基础路径
+          routeBasePath: 'blog',
+          
+          // 博客路径
+          path: 'blog',
+          
+          // 包含的文件
+          include: ['**/*.{md,mdx}'],
+          
+          // 排除的文件
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+          ],
+          
+          // 每页文章数
+          postsPerPage: 10,
+          
+          // 博客标题
+          blogTitle: '博客',
+          
+          // 博客描述
+          blogDescription: '技术博客',
+          
+          // 博客侧边栏标题
+          blogSidebarTitle: '最近文章',
+          
+          // 博客侧边栏文章数
+          blogSidebarCount: 5,
+          
+          // RSS 订阅配置
+          feedOptions: {
+            type: 'all', // 'rss' | 'atom' | 'json' | 'all'
+            title: '博客订阅',
+            description: '订阅我们的博客文章',
+            copyright: `Copyright © ${new Date().getFullYear()} Your Name`,
+            language: 'zh-CN',
+          },
+          
+          // 标签路由基础路径
+          tagsBasePath: 'tags',
+          
+          // 归档路由基础路径
+          archiveBasePath: 'archive',
+        },
+        
+        // ---------- 主题配置 ----------
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+        
+        // ---------- Google Analytics ----------
+        googleAnalytics: {
+          trackingID: 'UA-XXXXXXXXX-X',
+          anonymizeIP: true,
+        },
+        
+        // ---------- Google Tag Manager ----------
+        gtag: {
+          trackingID: 'G-XXXXXXXXXX',
+          anonymizeIP: true,
+        },
+        
+        // ---------- Sitemap ----------
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
+      }),
+    ],
+  ],
+
+  // ============================================
+  // 6. 主题配置 (themeConfig)
+  // ============================================
+  
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      // 社交卡片图片
+      image: 'img/docusaurus-social-card.jpg',
+      
+      // ---------- 导航栏 ----------
+      navbar: {
+        title: '胖头鱼学习网站',
+        logo: {
+          alt: 'Logo',
+          src: 'img/logo.svg',
+          srcDark: 'img/logo-dark.svg',
+          href: '/',
+          target: '_self',
+          width: 32,
+          height: 32,
+        },
+        items: [
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'JavaScript教程',
+          },
+          {
+            type: 'dropdown',
+            label: '更多教程',
+            position: 'left',
+            items: [
+              {label: 'Python', to: '/docs/python/intro'},
+              {label: 'Java', to: '/docs/java/intro'},
+              {label: 'SQL', to: '/docs/sql/intro'},
+            ],
+          },
+          {to: '/blog', label: '博客', position: 'left'},
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/your-repo',
+            label: 'GitHub',
+            position: 'right',
+          },
+        ],
+        hideOnScroll: false,
+      },
+      
+      // ---------- 页脚 ----------
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: '文档',
+            items: [
+              {
+                label: 'JavaScript教程',
+                to: '/docs/javascript/intro',
+              },
+              {
+                label: 'Python教程',
+                to: '/docs/python/intro',
+              },
+            ],
+          },
+          {
+            title: '社区',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/your-repo',
+              },
+              {
+                label: 'Discord',
+                href: 'https://discord.gg/your-invite',
+              },
+            ],
+          },
+          {
+            title: '更多',
+            items: [
+              {
+                label: '博客',
+                to: '/blog',
+              },
+              {
+                label: '关于',
+                to: '/about',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} 胖头鱼学习网站. Built with Docusaurus.`,
+      },
+      
+      // ---------- 代码高亮 ----------
+      prism: {
+        theme: themes.github,
+        darkTheme: themes.dracula,
+        defaultLanguage: 'javascript',
+        additionalLanguages: [
+          'java',
+          'python',
+          'php',
+          'ruby',
+          'go',
+          'rust',
+          'kotlin',
+          'swift',
+          'bash',
+          'sql',
+          'json',
+          'yaml',
+        ],
+      },
+      
+      // ---------- Algolia 搜索 ----------
+      algolia: {
+        appId: 'YOUR_APP_ID',
+        apiKey: 'YOUR_SEARCH_API_KEY',
+        indexName: 'YOUR_INDEX_NAME',
+        contextualSearch: true,
+        searchParameters: {},
+        searchPagePath: 'search',
+      },
+      
+      // ---------- 公告栏 ----------
+      announcementBar: {
+        id: 'support_us',
+        content:
+          '⭐️ 如果你喜欢这个网站，请在 <a target="_blank" rel="noopener noreferrer" href="https://github.com/xxx">GitHub</a> 给我们一个 Star！',
+        backgroundColor: '#fafbfc',
+        textColor: '#091E42',
+        isCloseable: true,
+      },
+      
+      // ---------- 目录 ----------
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 5,
+      },
+      
+      // ---------- 颜色模式 ----------
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
+      
+      // ---------- 文档侧边栏 ----------
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
+      
+      // ---------- 元数据 ----------
+      metadata: [
+        {name: 'keywords', content: 'javascript, python, java, 教程, 编程'},
+        {name: 'description', content: '胖头鱼学习网站 - 全面的编程教程'},
+        {property: 'og:image', content: 'https://example.com/image.png'},
+      ],
+    }),
+
+  // ============================================
+  // 7. 插件配置
+  // ============================================
+  
+  plugins: [
+    // 自定义插件
+    './src/plugins/my-plugin',
+    
+    // 插件配置（带选项）
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'api-docs',
+        path: 'api',
+        routeBasePath: 'api',
+        sidebarPath: require.resolve('./sidebarsApi.js'),
+      },
+    ],
+    
+    // PWA 插件
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/logo.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: 'rgb(37, 194, 160)',
+          },
+        ],
+      },
+    ],
+    
+    // 理想图片插件
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 70,
+        max: 1030,
+        min: 640,
+        steps: 2,
+        disableInDev: false,
+      },
+    ],
+  ],
+
+  // ============================================
+  // 8. 主题配置
+  // ============================================
+  
+  themes: [
+    // 实时代码编辑器
+    '@docusaurus/theme-live-codeblock',
+    
+    // 搜索主题
+    '@docusaurus/theme-search-algolia',
+  ],
+
+  // ============================================
+  // 9. 自定义字段
+  // ============================================
+  
+  customFields: {
+    // 可以在组件中通过 useDocusaurusContext 访问
+    adminEmail: 'admin@example.com',
+    description: '这是一个自定义字段示例',
+  },
+
+  // ============================================
+  // 10. 脚本和样式表
+  // ============================================
+  
+  scripts: [
+    // 字符串格式（简单脚本）
+    'https://buttons.github.io/buttons.js',
+    
+    // 对象格式（带属性）
+    {
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+      async: true,
+    },
+  ],
+  
+  stylesheets: [
+    // 字符串格式
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap',
+    
+    // 对象格式
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
+  ],
+
+  // ============================================
+  // 11. Markdown 配置
+  // ============================================
+  
+  markdown: {
+    mermaid: true,
+    format: 'mdx',
+    mdx1Compat: {
+      comments: true,
+      admonitions: true,
+      headingIds: true,
+    },
+  },
+
+  // ============================================
+  // 12. 静态目录
+  // ============================================
+  
+  staticDirectories: ['static', 'public'],
+
+  // ============================================
+  // 13. 头部标签
+  // ============================================
+  
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+  ],
+
+  // ============================================
+  // 14. 客户端模块
+  // ============================================
+  
+  clientModules: [
+    require.resolve('./src/clientModules/routeModules.js'),
+  ],
+
+  // ============================================
+  // 15. SSR 模板
+  // ============================================
+  
+  ssrTemplate: `<!DOCTYPE html>
+<html <%~ it.htmlAttributes %>>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%~ it.headTags %>
+  </head>
+  <body <%~ it.bodyAttributes %>>
+    <%~ it.preBodyTags %>
+    <div id="__docusaurus">
+      <%~ it.appHtml %>
+    </div>
+    <%~ it.postBodyTags %>
+  </body>
+</html>`,
+
+  // ============================================
+  // 16. Webpack 配置（高级）
+  // ============================================
+  
+  webpack: {
+    jsLoader: (isServer) => ({
+      loader: require.resolve('swc-loader'),
+      options: {
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            tsx: true,
+          },
+          target: 'es2017',
+        },
+        module: {
+          type: isServer ? 'commonjs' : 'es6',
+        },
+      },
+    }),
+  },
+
+  // ============================================
+  // 17. 未来功能标志
+  // ============================================
+  
+  future: {
+    experimental_faster: true,
+    experimental_storage: {
+      type: 'localStorage',
+      namespace: 'docusaurus',
+    },
+    experimental_router: 'browser',
+  },
+
+  // ============================================
+  // 18. 基础 URL 配置
+  // ============================================
+  
+  // 如果需要在子路径部署
+  // baseUrl: '/my-site/',
+  
+  // 如果需要去除 .html 后缀
+  // trailingSlash: false,
+  
+  // 如果需要添加 .html 后缀
+  // trailingSlash: true,
+};
+
+module.exports = config;
+
+// ============================================
+// 实用配置示例
+// ============================================
+
+// 最小化配置（生产环境）
+const minimalConfig = {
+  title: '我的网站',
+  url: 'https://example.com',
+  baseUrl: '/',
+  favicon: 'img/favicon.ico',
+  
+  i18n: {
+    defaultLocale: 'zh-CN',
+    locales: ['zh-CN'],
+  },
+  
+  presets: [
+    [
+      'classic',
+      {
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+        },
+        blog: false,
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+      },
+    ],
+  ],
+  
+  themeConfig: {
+    navbar: {
+      title: '我的网站',
+      items: [
+        {type: 'docSidebar', sidebarId: 'tutorialSidebar', label: '文档'},
+      ],
+    },
+    footer: {
+      copyright: `© ${new Date().getFullYear()} 我的网站`,
+    },
+    prism: {
+      theme: themes.github,
+      darkTheme: themes.dracula,
+    },
+  },
+};
+
+// GitHub Pages 部署配置
+const githubPagesConfig = {
+  url: 'https://username.github.io',
+  baseUrl: '/repo-name/',
+  organizationName: 'username',
+  projectName: 'repo-name',
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
+};
+
+// 多语言配置
+const multiLangConfig = {
+  i18n: {
+    defaultLocale: 'zh-CN',
+    locales: ['zh-CN', 'en', 'ja'],
+    localeConfigs: {
+      'zh-CN': {
+        label: '简体中文',
+        direction: 'ltr',
+      },
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+      ja: {
+        label: '日本語',
+        direction: 'ltr',
+      },
+    },
+  },
+};
+```

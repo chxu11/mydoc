@@ -1,0 +1,467 @@
+---
+title: 3.组件与Props
+slug: '3'
+mapShort: Props
+description: 理解 React 组件与 Props，学会像搭积木一样拆分页面、传递数据，并掌握 JSX 常见写法。
+keywords: [React, 组件, Props, JSX]
+tags: [前端]
+---
+# 阶段3:组件与Props
+
+## 🎯 学习目标
+理解React组件的概念,学会创建和使用函数组件,掌握Props数据传递。
+
+---
+
+## 一、什么是组件?
+
+### 通俗比喻:组件就像"乐高积木"
+
+想象你在搭乐高城堡:
+- **传统方式**: 每次都从零开始堆砌每块砖(重复劳动)
+- **组件方式**: 提前做好"门"、"窗户"、"塔"的模块,需要时直接拿来组装
+
+```
+一个网页 = 多个组件拼起来
+
+┌─────────────────────────┐
+│      <Header />         │ ← 顶部导航组件
+├─────────────────────────┤
+│   <Sidebar />  │  <Main />  │ ← 侧边栏 + 主内容
+├─────────────────────────┤
+│      <Footer />         │ ← 底部组件
+└─────────────────────────┘
+```
+
+**核心思想**: 把页面拆成小块,每块是一个组件,组件可以反复使用。
+
+---
+
+## 二、创建第一个组件
+
+### 示例1:最简单的组件(无参数)
+
+在 `src` 文件夹创建新文件 `Greeting.js`:
+
+```javascript
+// Greeting.js - 一个打招呼的组件
+
+function Greeting() {
+  // return里写这个组件要显示的内容(看起来像HTML,其实是JSX)
+  return (
+    <div>
+      <h2>你好!</h2>
+      <p>欢迎学习React</p>
+    </div>
+  );
+}
+
+// 必须导出,别的文件才能用
+export default Greeting;
+```
+
+**使用这个组件** - 修改 `src/App.js`:
+
+```javascript
+// App.js
+import Greeting from './Greeting';  // 导入组件(注意路径 ./ 表示当前文件夹)
+
+function App() {
+  return (
+    <div>
+      <h1>我的React应用</h1>
+      <Greeting />  {/* 使用组件,像HTML标签一样! */}
+      <Greeting />  {/* 可以用多次 */}
+    </div>
+  );
+}
+
+export default App;
+```
+
+**运行结果**:
+```
+我的React应用
+你好!
+欢迎学习React
+你好!
+欢迎学习React
+```
+
+**关键点**:
+- 组件名必须**大写开头**(如 `Greeting`,不能写 `greeting`)
+- 组件就是一个**函数**,返回JSX(看起来像HTML的语法)
+- 使用组件像写HTML标签: `<Greeting />`
+
+---
+
+## 三、什么是JSX?
+
+### JSX = JavaScript + XML(HTML)
+
+```javascript
+// 这是JSX(React的语法)
+const element = <h1>Hello</h1>;
+
+// 浏览器其实会把它转换成:
+const element = React.createElement('h1', null, 'Hello');
+```
+
+### JSX 基本规则:
+
+#### 规则1: 必须有一个根元素
+```javascript
+// ❌ 错误:返回了多个并列元素
+function Wrong() {
+  return (
+    <h1>标题</h1>
+    <p>段落</p>
+  );
+}
+
+// ✅ 正确:用一个<div>包起来
+function Correct() {
+  return (
+    <div>
+      <h1>标题</h1>
+      <p>段落</p>
+    </div>
+  );
+}
+
+// ✅ 或者用空标签<>...</>(叫Fragment,不会在HTML里产生多余标签)
+function Better() {
+  return (
+    <>
+      <h1>标题</h1>
+      <p>段落</p>
+    </>
+  );
+}
+```
+
+#### 规则2: 用 `className` 代替 `class`
+```javascript
+// ❌ 错误:class是JS的关键字
+<div class="container">内容</div>
+
+// ✅ 正确:用className
+<div className="container">内容</div>
+```
+
+#### 规则3: 用 `{}` 插入JavaScript表达式
+```javascript
+function Demo() {
+  const name = '小明';
+  const age = 18;
+  
+  return (
+    <div>
+      <p>姓名: {name}</p>           {/* 输出变量 */}
+      <p>年龄: {age}</p>
+      <p>明年: {age + 1} 岁</p>    {/* 可以写表达式 */}
+      <p>{age >= 18 ? '成年' : '未成年'}</p>  {/* 三元运算符 */}
+    </div>
+  );
+}
+```
+
+---
+
+## 四、Props:给组件传参数
+
+### 通俗比喻:Props就像"函数参数"
+
+```javascript
+// 普通JS函数接收参数
+function sayHello(name) {
+  return `你好, ${name}!`;
+}
+sayHello('小明');  // 输出: 你好, 小明!
+
+// React组件接收Props(也是参数!)
+function Greeting(props) {
+  return <h1>你好, {props.name}!</h1>;
+}
+<Greeting name="小明" />  // 输出: 你好, 小明!
+```
+
+---
+
+### 示例2:带Props的组件
+
+创建 `src/UserCard.js`:
+
+```javascript
+// UserCard.js - 用户卡片组件
+
+function UserCard(props) {
+  // props是一个对象,包含所有传进来的属性
+  // 比如 <UserCard name="小明" age={18} />
+  // props就是 { name: '小明', age: 18 }
+  
+  return (
+    <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px' }}>
+      <h3>姓名: {props.name}</h3>
+      <p>年龄: {props.age}</p>
+      <p>爱好: {props.hobby}</p>
+    </div>
+  );
+}
+
+export default UserCard;
+```
+
+**使用这个组件** - 修改 `src/App.js`:
+
+```javascript
+import UserCard from './UserCard';
+
+function App() {
+  return (
+    <div>
+      <h1>用户列表</h1>
+      
+      {/* 像HTML属性一样传Props */}
+      <UserCard name="小明" age={18} hobby="打篮球" />
+      <UserCard name="小红" age={20} hobby="画画" />
+      <UserCard name="小刚" age={22} hobby="编程" />
+    </div>
+  );
+}
+
+export default App;
+```
+
+**运行结果**:
+```
+用户列表
+┌──────────────────┐
+│ 姓名: 小明        │
+│ 年龄: 18         │
+│ 爱好: 打篮球      │
+└──────────────────┘
+┌──────────────────┐
+│ 姓名: 小红        │
+│ 年龄: 20         │
+│ 爱好: 画画        │
+└──────────────────┘
+...
+```
+
+**注意**:
+- 字符串直接写: `name="小明"`
+- 数字/变量要用`{}`: `age={18}`
+- Props是**只读**的,组件内部不能修改
+
+---
+
+### 示例3:解构Props(更简洁的写法)
+
+```javascript
+// 方式1:用props.xxx(上面的写法)
+function UserCard(props) {
+  return <h3>{props.name}</h3>;
+}
+
+// 方式2:解构赋值(推荐!更简洁)
+function UserCard({ name, age, hobby }) {
+  // 直接从props里取出name、age、hobby
+  return (
+    <div>
+      <h3>姓名: {name}</h3>      {/* 不用写props.了 */}
+      <p>年龄: {age}</p>
+      <p>爱好: {hobby}</p>
+    </div>
+  );
+}
+```
+
+---
+
+### 示例4:Props默认值
+
+```javascript
+function Button({ text, color }) {
+  return (
+    <button style={{ backgroundColor: color, padding: '10px' }}>
+      {text}
+    </button>
+  );
+}
+
+// 设置默认值:如果没传color,就用蓝色
+Button.defaultProps = {
+  color: 'blue',
+  text: '点击'
+};
+
+// 使用
+<Button text="提交" color="green" />  {/* 绿色按钮 */}
+<Button text="取消" />  {/* 蓝色按钮(用默认值) */}
+<Button />  {/* 显示"点击"的蓝色按钮 */}
+```
+
+---
+
+## 五、完整实战案例:个人简介卡片
+
+### 目标:做一个可复用的简介组件
+
+**1. 创建 `src/ProfileCard.js`:**
+
+```javascript
+// ProfileCard.js - 个人简介卡片组件
+
+function ProfileCard({ name, job, avatar, bio }) {
+  return (
+    <div style={{
+      border: '2px solid #4CAF50',
+      borderRadius: '10px',
+      padding: '20px',
+      margin: '20px',
+      maxWidth: '300px',
+      boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+    }}>
+      {/* 头像 */}
+      <img 
+        src={avatar} 
+        alt={name}
+        style={{ width: '100px', height: '100px', borderRadius: '50%' }}
+      />
+      
+      {/* 姓名 */}
+      <h2 style={{ color: '#333', marginTop: '10px' }}>
+        {name}
+      </h2>
+      
+      {/* 职业 */}
+      <p style={{ color: '#666', fontStyle: 'italic' }}>
+        {job}
+      </p>
+      
+      {/* 简介 */}
+      <p style={{ color: '#888', fontSize: '14px', marginTop: '10px' }}>
+        {bio}
+      </p>
+    </div>
+  );
+}
+
+// 默认值
+ProfileCard.defaultProps = {
+  avatar: 'https://via.placeholder.com/100',  // 默认头像
+  bio: '这个人很懒,什么都没写~'
+};
+
+export default ProfileCard;
+```
+
+**2. 在 `src/App.js` 使用:**
+
+```javascript
+import ProfileCard from './ProfileCard';
+
+function App() {
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <ProfileCard 
+        name="张小明"
+        job="前端工程师"
+        avatar="https://i.pravatar.cc/100?img=1"
+        bio="热爱编程,擅长React开发,喜欢分享技术"
+      />
+      
+      <ProfileCard 
+        name="李小红"
+        job="UI设计师"
+        avatar="https://i.pravatar.cc/100?img=5"
+        bio="专注用户体验,喜欢简洁优雅的设计"
+      />
+      
+      <ProfileCard 
+        name="王小刚"
+        job="产品经理"
+        avatar="https://i.pravatar.cc/100?img=8"
+        // 没写bio,会用默认值
+      />
+    </div>
+  );
+}
+
+export default App;
+```
+
+**运行结果**: 三张漂亮的简介卡片并排显示,每张卡片内容不同但样式统一!
+
+---
+
+## 六、Props的几种特殊用法
+
+### 1. 传递子元素 (children)
+
+
+
+### 2. 传递函数
+
+```javascript
+function Button({ onClick, text }) {
+  return <button onClick={onClick}>{text}</button>;
+}
+
+function App() {
+  const handleClick = () => {
+    alert('按钮被点击了!');
+  };
+  
+  return <Button onClick={handleClick} text="点我" />;
+}
+```
+
+---
+
+## ✅ 阶段3总结
+
+**你已经学会**:
+1. ✓ 什么是组件(可复用的代码块)
+2. ✓ 创建函数组件
+3. ✓ JSX基本语法(HTML + JS混合)
+4. ✓ 用Props给组件传参数
+5. ✓ 解构Props的简洁写法
+6. ✓ 设置Props默认值
+
+**核心知识点**:
+```javascript
+// 组件 = 函数 + JSX
+function MyComponent({ prop1, prop2 }) {  // 接收Props
+  return (
+    <div>
+      <h1>{prop1}</h1>  {/* 用{}插入JS */}
+      <p>{prop2}</p>
+    </div>
+  );
+}
+
+// 使用组件
+<MyComponent prop1="值1" prop2="值2" />
+```
+
+**验收标准**:
+- 能创建一个组件文件并在App.js中使用
+- 能通过Props传递不同的数据给组件
+- 理解组件复用的好处(改一处,所有地方都更新)
+
+**下一步**:
+目前的组件都是"静态"的(数据写死了)。下一阶段我们将学习**State(状态)**,让组件"活"起来,能响应用户操作!
+
+---
+
+## 💡 练习题
+
+试着自己做一个 `ProductCard` 组件,显示商品信息:
+- 商品图片
+- 商品名称
+- 价格
+- 简介
+
+然后在App.js里用这个组件显示3件不同的商品。

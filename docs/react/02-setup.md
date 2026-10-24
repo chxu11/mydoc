@@ -1,0 +1,325 @@
+---
+title: 2.环境搭建
+slug: '2'
+mapShort: 环境
+description: 从零安装 Node.js 与创建第一个 React 项目，熟练运用 create-react-app / Vite 与开发者工具。
+keywords: [React, 环境搭建, Node.js, create-react-app, Vite]
+tags: [前端]
+---
+
+# 阶段2：环境搭建
+
+## 🎯 学习目标
+安装必要的工具,创建并运行你的第一个React项目。
+
+---
+
+## 一、需要安装的工具
+
+### 1. Node.js (必须)
+**是什么?** Node.js是JavaScript的运行环境,就像手机需要操作系统才能运行App。
+
+**为什么需要?**
+- React项目需要用npm(包管理器)来安装依赖
+- 需要用命令行工具启动开发服务器
+
+---
+
+## 二、详细安装步骤
+
+### 步骤1: 安装 Node.js
+
+#### Windows系统:
+1. 访问官网: https://nodejs.org/
+2. 下载 **LTS版本**(长期支持版,更稳定)
+3. 双击安装包,一路点"下一步"
+4. ⚠️ 注意:安装时勾选"Automatically install necessary tools"
+
+#### Mac系统:
+1. 访问官网: https://nodejs.org/
+2. 下载 **LTS版本**
+3. 双击.pkg文件安装
+4. 或者用Homebrew: `brew install node`
+
+#### 验证安装成功:
+打开**命令行工具**:
+- Windows: 按`Win + R`,输入`cmd`,回车
+- Mac: 按`Command + 空格`,搜索"终端"
+
+输入以下命令:
+```bash
+node -v
+```
+如果显示版本号(如 `v20.10.0`),说明安装成功!
+
+再输入:
+```bash
+npm -v
+```
+如果显示版本号(如 `10.2.3`),npm也安装好了!
+
+---
+
+### 步骤2: 创建第一个React项目
+
+#### 方法1: 使用 create-react-app (推荐新手)
+
+**1. 打开命令行,进入你想放项目的文件夹**
+
+例如进入桌面:
+```bash
+# Windows
+cd Desktop
+
+# Mac
+cd ~/Desktop
+```
+
+**2. 创建项目(项目名叫 my-first-react)**
+```bash
+npx create-react-app my-first-react
+```
+
+**解释**:
+- `npx`: npm自带的工具,用来运行包
+- `create-react-app`: React官方脚手架工具
+- `my-first-react`: 你的项目名(可以改,但只能用小写字母、数字、横杠)
+
+**3. 等待安装(3-5分钟)**
+
+你会看到类似这样的输出:
+```
+Creating a new React app in /Users/你的用户名/Desktop/my-first-react.
+
+Installing packages. This might take a couple of minutes.
+...
+Success! Created my-first-react at /Users/你的用户名/Desktop/my-first-react
+```
+
+**4. 进入项目文件夹**
+```bash
+cd my-first-react
+```
+
+**5. 启动项目**
+```bash
+npm start
+```
+
+**6. 查看结果**
+
+浏览器会自动打开 http://localhost:3000
+
+你会看到React的欢迎页面,有个旋转的React图标! 🎉
+
+---
+
+## 三、常见问题解决
+
+### 问题1: `npx: command not found`
+**原因**: Node.js没装好或环境变量没配置
+
+**解决**:
+1. 重新安装Node.js
+2. 重启命令行工具
+3. 再次检查: `node -v` 和 `npm -v`
+
+---
+
+### 问题2: 创建项目时报错 `EACCES` 或权限错误
+**原因**: 权限不足
+
+**解决**:
+```bash
+# Mac/Linux: 在命令前加 sudo
+sudo npx create-react-app my-first-react
+
+# Windows: 以管理员身份运行命令行
+# 右键"命令提示符" → 选择"以管理员身份运行"
+```
+
+---
+
+### 问题3: 安装很慢或卡住
+**原因**: npm默认服务器在国外,网速慢
+
+**解决**: 切换到国内镜像
+```bash
+# 临时使用淘宝镜像
+npx create-react-app my-first-react --use-npm --registry=https://registry.npmmirror.com
+
+# 或者永久设置(推荐)
+npm config set registry https://registry.npmmirror.com
+# 然后再创建项目
+npx create-react-app my-first-react
+```
+
+---
+
+### 问题4: 浏览器打开后显示"无法访问此网站"
+**原因**: 项目没启动成功
+
+**解决**:
+1. 检查命令行有没有报错
+2. 确保执行了 `npm start`
+3. 手动访问: http://localhost:3000
+4. 检查3000端口是否被占用,如果被占用会自动换端口(看命令行提示)
+
+---
+
+## 四、项目结构介绍
+
+创建好的项目文件夹长这样:
+
+```
+my-first-react/
+├── node_modules/        ← 依赖包(自动生成,不用管)
+├── public/              ← 静态文件
+│   ├── index.html       ← 入口HTML文件
+│   └── ...
+├── src/                 ← 源代码(你主要写代码的地方)
+│   ├── App.js           ← 主组件
+│   ├── index.js         ← 项目入口文件
+│   └── ...
+├── package.json         ← 项目配置文件
+└── README.md
+```
+
+**重要文件说明**:
+
+### 1. `src/index.js` (项目入口)
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+```
+**作用**: 把React应用挂载到HTML页面的`<div id="root"></div>`里
+
+---
+
+### 2. `src/App.js` (主组件)
+```javascript
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello React!</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+**作用**: 定义页面显示的内容
+
+---
+
+### 3. `public/index.html` (HTML模板)
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>React App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- React会把内容渲染到这里 -->
+  </body>
+</html>
+```
+
+---
+
+## 五、第一次修改代码
+
+### 🎯 目标:把欢迎页改成"你好,React!"
+
+**1. 用编辑器打开项目**
+
+推荐使用 VS Code(免费): https://code.visualstudio.com/
+
+打开方式:
+- 打开VS Code → 文件 → 打开文件夹 → 选择`my-first-react`
+
+**2. 找到 `src/App.js` 文件**
+
+**3. 删除所有代码,替换成:**
+
+```javascript
+function App() {
+  return (
+    <div>
+      <h1>你好, React!</h1>
+      <p>这是我的第一个React项目</p>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**4. 保存文件 (Ctrl + S 或 Command + S)**
+
+**5. 看浏览器**
+
+页面会**自动刷新**,显示你的新内容! ✨
+
+**这就是React的热更新功能**: 改代码 → 自动刷新,不用手动刷新浏览器。
+
+---
+
+## 六、基本开发命令
+
+在项目文件夹里,这些命令很常用:
+
+### 启动开发服务器
+```bash
+npm start
+```
+- 启动项目,打开 http://localhost:3000
+- 修改代码会自动刷新页面
+- 按 `Ctrl + C` 停止服务器
+
+### 打包项目(上线前)
+```bash
+npm run build
+```
+- 生成优化后的代码(在`build`文件夹)
+- 现在不需要了解,等做完项目再用
+
+---
+
+## ✅ 阶段2总结
+
+**你已经学会**:
+1. ✓ 安装Node.js和npm
+2. ✓ 用`create-react-app`创建项目
+3. ✓ 启动项目并在浏览器查看
+4. ✓ 修改代码并看到自动更新
+5. ✓ 了解项目的基本结构
+
+**验收标准**:
+- 命令行运行`npm start`后,浏览器能打开并显示页面
+- 修改`App.js`文件后,浏览器自动刷新显示新内容
+
+**下一步**:
+现在环境搭好了,下一阶段我们将学习React的核心概念——**组件**,开始真正写React代码!
+
+---
+
+## 💡 小技巧
+
+### VS Code 推荐安装的插件:
+1. **ES7+ React/Redux/React-Native snippets**: 快速生成React代码
+2. **Prettier**: 自动格式化代码
+3. **Auto Rename Tag**: 自动重命名配对的标签
+
+安装方式: VS Code左侧点击"扩展"图标 → 搜索插件名 → 点击安装
+
+### 快捷键(记住更高效):
+- `Ctrl + S` (Mac: `Command + S`): 保存文件
+- `Ctrl + C`: 在命令行停止运行中的程序
+- `Ctrl + ~`: 在VS Code打开终端

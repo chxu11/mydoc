@@ -19,3 +19,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# 生成的知识地图数据（scripts/gen-tracks.js）
+src/data/tracks.json
