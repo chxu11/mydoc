@@ -22,3 +22,6 @@ yarn-error.log*
 
 # 生成的知识地图数据（scripts/gen-tracks.js）
 src/data/tracks.json
+
+# Qoder Sites 部署元数据（本地发布状态，含 siteId/deploymentId）
+*.qoder.site
