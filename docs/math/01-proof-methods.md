@@ -65,12 +65,12 @@ wrapperClassName: math-page
     <tr><th>#</th><th>命题</th><th>方法</th><th>为什么必知</th></tr>
   </thead>
   <tbody>
-    <tr><td>1</td><td><a href="/docs/math/2">素数有无穷多个</a></td><td>反证 + 构造</td><td>欧几里得 2300 年前的杰作，最短最漂亮</td></tr>
-    <tr><td>2</td><td><a href="/docs/math/3">√2 是无理数</a></td><td>反证</td><td>毕达哥拉斯学派的"惊天危机"</td></tr>
-    <tr><td>3</td><td><a href="/docs/math/4">毕达哥拉斯定理</a></td><td>面积拼合</td><td>无字证明的巅峰，一图胜过千言</td></tr>
-    <tr><td>4</td><td><a href="/docs/math/5">高斯求和 &amp; 归纳法</a></td><td>归纳 + 配对</td><td>从"神童故事"到数学思维入门</td></tr>
-    <tr><td>5</td><td><a href="/docs/math/6">贝叶斯定理</a></td><td>条件概率</td><td>现代 AI 时代最实用的数学公式</td></tr>
-    <tr class="table-footer-row"><td colspan="4">推荐顺序：按行号读；如果只有 15 分钟，读 <a href="/docs/math/2">素数</a> 与 <a href="/docs/math/4">毕氏定理</a>。</td></tr>
+    <tr><td>1</td><td><a href="../2/">素数有无穷多个</a></td><td>反证 + 构造</td><td>欧几里得 2300 年前的杰作，最短最漂亮</td></tr>
+    <tr><td>2</td><td><a href="../3/">√2 是无理数</a></td><td>反证</td><td>毕达哥拉斯学派的"惊天危机"</td></tr>
+    <tr><td>3</td><td><a href="../4/">毕达哥拉斯定理</a></td><td>面积拼合</td><td>无字证明的巅峰，一图胜过千言</td></tr>
+    <tr><td>4</td><td><a href="../5/">高斯求和 &amp; 归纳法</a></td><td>归纳 + 配对</td><td>从"神童故事"到数学思维入门</td></tr>
+    <tr><td>5</td><td><a href="../6/">贝叶斯定理</a></td><td>条件概率</td><td>现代 AI 时代最实用的数学公式</td></tr>
+    <tr class="table-footer-row"><td colspan="4">推荐顺序：按行号读；如果只有 15 分钟，读 <a href="../2/">素数</a> 与 <a href="../4/">毕氏定理</a>。</td></tr>
   </tbody>
 </table>
 
@@ -82,11 +82,11 @@ wrapperClassName: math-page
     <tr><th>#</th><th>主题</th><th>关键词</th><th>代表图</th></tr>
   </thead>
   <tbody>
-    <tr><td>1</td><td><a href="/docs/math/7">分形</a></td><td>Mandelbrot · Julia · Koch · Sierpinski · Barnsley</td><td>无限自相似的海岸线</td></tr>
-    <tr><td>2</td><td><a href="/docs/math/8">傅里叶分析</a></td><td>级数 · 频谱 · FFT · Gibbs</td><td>用旋转的圆叠出方波</td></tr>
-    <tr><td>3</td><td><a href="/docs/math/9">经典几何</a></td><td>欧几里得 · 尺规 · 黄金分割 · 斐波那契</td><td>现存最古老的《原本》残片</td></tr>
-    <tr><td>4</td><td><a href="/docs/math/10">黎曼几何</a></td><td>曲率 · 球面 · 双曲 · Poincaré · 流形</td><td>把无限塞进一个圆盘</td></tr>
-    <tr class="table-footer-row"><td colspan="4">推荐搭配：先读 <a href="/docs/math/4">无字证明</a>，再读 <a href="/docs/math/9">经典几何</a>，接着读 <a href="/docs/math/10">黎曼几何</a> 看空间如何弯曲；<a href="/docs/math/7">分形</a> 与 <a href="/docs/math/8">傅里叶</a> 什么时候翻都有惊喜。</td></tr>
+    <tr><td>1</td><td><a href="../7/">分形</a></td><td>Mandelbrot · Julia · Koch · Sierpinski · Barnsley</td><td>无限自相似的海岸线</td></tr>
+    <tr><td>2</td><td><a href="../8/">傅里叶分析</a></td><td>级数 · 频谱 · FFT · Gibbs</td><td>用旋转的圆叠出方波</td></tr>
+    <tr><td>3</td><td><a href="../9/">经典几何</a></td><td>欧几里得 · 尺规 · 黄金分割 · 斐波那契</td><td>现存最古老的《原本》残片</td></tr>
+    <tr><td>4</td><td><a href="../10/">黎曼几何</a></td><td>曲率 · 球面 · 双曲 · Poincaré · 流形</td><td>把无限塞进一个圆盘</td></tr>
+    <tr class="table-footer-row"><td colspan="4">推荐搭配：先读 <a href="../4/">无字证明</a>，再读 <a href="../9/">经典几何</a>，接着读 <a href="../10/">黎曼几何</a> 看空间如何弯曲；<a href="../7/">分形</a> 与 <a href="../8/">傅里叶</a> 什么时候翻都有惊喜。</td></tr>
   </tbody>
 </table>
 
