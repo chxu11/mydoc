@@ -8,9 +8,14 @@ const config = {
   tagline: '跨学科学习平台 · 编程 / 纹样 / 数学 / 物理 / 教育 / 诗歌文章',
   favicon: 'img/favicon.ico',
 
-  url: 'https://chxu11.github.io',
+  url: process.env.SITE_URL || 'https://chxu11.github.io',
   // baseUrl  需要改成你的仓库名，如果你启用了GitHub Pages，请改成你的仓库名,默认是/
-  baseUrl: '/mydoc/',
+  // 部署到独立站点（如 Qoder Sites）时用 SITE_BASE_URL=/ 覆盖，避免静态资源指向 /mydoc/
+  baseUrl: process.env.SITE_BASE_URL || '/mydoc/',
+  // 必须显式设置：不设置时 Docusaurus 走 legacy 分支，文件产出为「目录/index.html」，
+  // 但 Link.js 不给 href 补尾斜杠。静态网关（GitHub Pages / Qoder Sites）不会自动补斜杠，
+  // 于是站内所有链接刷新/直接访问都会 404。设为 true 后 href 与产物布局一致。
+  trailingSlash: true,
   // 对于死链接，默认是warn，可以改成其他的选项，比如ignore,throw
   onBrokenLinks: 'throw',
 

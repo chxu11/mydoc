@@ -33,6 +33,9 @@ function layoutLines(items) {
 export default function MetroMap() {
   const done = useProgress();
   const base = useBaseUrl('/');
+  // 站点配置了 trailingSlash: true，而这里的 <a> 是手写 SVG 链接、不走 Docusaurus 的 <Link>，
+  // 不会自动补尾斜杠。静态网关对「目录/index.html」不会补斜杠，缺斜杠即 404，故在此归一化。
+  const stationHref = (to) => `${base}${String(to).replace(/^\//, '').replace(/\/$/, '')}/`;
 
   const ordered = [...tracks].sort((a, b) => (a.kind === b.kind ? 0 : a.kind === 'code' ? -1 : 1));
   const {ys, bottom} = layoutLines(ordered);
@@ -91,7 +94,7 @@ export default function MetroMap() {
                 return (
                   <a
                     key={s.pos}
-                    href={`${base}${s.to.replace(/^\//, '')}`}
+                    href={stationHref(s.to)}
                     className={styles.station}>
                     <circle
                       cx={x}
