@@ -7,20 +7,53 @@
 .svg {
   width: 100%;
   height: auto;
-  min-width: 640px;
+  /* 下限从 640 提到 880：SVG 等比缩放，太窄会把站点名压到 9px 以下读不清 */
+  min-width: 880px;
   display: block;
 }
 
 .transfer {
-  stroke: var(--ifm-color-emphasis-400);
+  /* emphasis-400 在浅色底上仅 1.6:1，几乎看不见；600 在两个主题下都可辨 */
+  stroke: var(--ifm-color-emphasis-600);
   stroke-width: 2.5;
   stroke-dasharray: 5 5;
 }
 
+/* 换乘站：站点外圈的虚线圈，表示它同时被某个跨栏目概念认领 */
+.hub {
+  fill: none;
+  stroke: var(--ifm-font-color-base);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 3;
+  opacity: 0.45;
+}
+
+/* 一级：栏目名（纹样 / 数学 / 物理 …）。不写 fill，让 JSX 里的 fill={track.color} 生效 */
 .lineName {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 700;
-  fill: currentColor;
+}
+
+/* 二级：编程组内的语言线，靠字号字重与缩进降一档 */
+.lineNameSub {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* 组标题：中性字色，与彩色线路名区分开。
+   注：SVG 里不能用 --ifm-heading-color（Infima 定义为 inherit，会落到 SVG 默认黑色） */
+.groupName {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  fill: var(--ifm-font-color-base);
+}
+
+/* 组引导线：比换乘虚线明显一档，才看得出是“括号”而不是装饰 */
+.groupGuide {
+  stroke: var(--ifm-color-emphasis-600);
+  stroke-width: 2;
+  stroke-linecap: round;
 }
 
 .station {
@@ -39,7 +72,7 @@
 }
 
 .stationLabel {
-  font-size: 14px;
+  font-size: 16px;
   fill: var(--ifm-font-color-base);
   pointer-events: none;
 }

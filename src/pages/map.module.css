@@ -26,7 +26,8 @@
 
 .dotOutline,
 .dotFilled,
-.transferHint {
+.transferHint,
+.hubHint {
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -47,6 +48,13 @@
   height: 0;
   border-radius: 0;
   border-top: 2px dashed var(--ifm-color-emphasis-400);
+}
+
+/* 换乘站：与地图上站点外圈的虚线圈一致 */
+.hubHint {
+  width: 16px;
+  height: 16px;
+  border: 2px dashed var(--ifm-color-emphasis-600);
 }
 
 .back {
