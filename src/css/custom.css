@@ -7,6 +7,18 @@
 /* KaTeX 数学公式样式（给 docs/math 栏目使用） */
 @import 'katex/dist/katex.min.css';
 
+/* 页面底色：本版本的 Infima 把浅色主题的 --ifm-background-color 定为透明，
+   系统偏好深色时浏览器画布会自己变深（#1b1b1d），于是浅色主题下正文与标题
+   几乎不可读、地图上「未读」站点还会被看成实心白点。这里给根元素显式兜一层底色，
+   深色主题仍由 html[data-theme='dark'] 覆盖回去。 */
+html {
+  background-color: #fff;
+}
+
+html[data-theme='dark'] {
+  background-color: #1b1b1d;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;
