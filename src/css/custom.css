@@ -202,6 +202,78 @@ html[data-theme='dark'] {
 [data-theme='dark'] .math-page .theme-admonition-note h5 { color: #79b8e6; }
 [data-theme='dark'] .math-page .theme-admonition-info h5 { color: #ffb265; }
 
+/* ---------------------------------------- */
+/* 文档侧边栏：层级只用字号/字重/颜色区分      */
+/* 栏目名本身不带 emoji（见各 _category_.json）*/
+/* 层次感：16px/700 → 15px/600 → 14.4px/400 → 13.4px/400，字色逐级变浅 */
+/* ---------------------------------------- */
+
+/* 一级栏目：介绍 / 编程 / 纹样 / 数学 / 物理 / 教育 / 诗歌文章 */
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--ifm-heading-color);
+}
+
+/* 二级分类：编程下的 前端 / Rust / Python / Java / 建站参考 */
+.theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible > .menu__link {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+}
+
+/* 二级文档：各栏目下的正文条目 */
+.theme-doc-sidebar-menu .theme-doc-sidebar-item-link-level-2 > .menu__link {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* 三级文档：编程各语言目录下的正文条目，最轻一档 */
+.theme-doc-sidebar-menu .theme-doc-sidebar-item-link-level-3 > .menu__link {
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* 当前所在栏目/当前页：只换颜色，不改字重（否则一级栏目会变得比同级更轻） */
+/* 浅色下用 primary-darkest，保证绿字压在高亮底色上仍达 AA（≈6.8:1） */
+.theme-doc-sidebar-menu
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  > .menu__link--active,
+.theme-doc-sidebar-menu
+  .theme-doc-sidebar-item-category-level-2
+  > .menu__list-item-collapsible
+  > .menu__link--active,
+.theme-doc-sidebar-menu .theme-doc-sidebar-item-link-level-2 > .menu__link--active,
+.theme-doc-sidebar-menu .theme-doc-sidebar-item-link-level-3 > .menu__link--active {
+  color: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='dark']
+  .theme-doc-sidebar-menu
+  .theme-doc-sidebar-item-category-level-1
+  > .menu__list-item-collapsible
+  > .menu__link--active,
+[data-theme='dark']
+  .theme-doc-sidebar-menu
+  .theme-doc-sidebar-item-category-level-2
+  > .menu__list-item-collapsible
+  > .menu__link--active,
+[data-theme='dark'] .theme-doc-sidebar-menu .theme-doc-sidebar-item-link-level-2 > .menu__link--active,
+[data-theme='dark'] .theme-doc-sidebar-menu .theme-doc-sidebar-item-link-level-3 > .menu__link--active {
+  color: var(--ifm-menu-color-active);
+}
+
+/* 深色主题下当前页底色几乎不可见，提亮一档 */
+[data-theme='dark']
+  .theme-doc-sidebar-menu
+  .menu__link--active:not(.menu__link--sublist) {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
 /* ===== 导航栏品牌区：站名后的低调署名 ===== */
 .navbar__title::after {
   content: ' · 叫我「学者」';
