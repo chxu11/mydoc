@@ -29,6 +29,11 @@ function bump(p0, p1, spike, center) {
   return {a, b, apex: Math.hypot(c1.x - center.x, c1.y - center.y) > Math.hypot(c2.x - center.x, c2.y - center.y) ? c1 : c2};
 }
 
+/**
+ * 一次迭代把一条边换成四段：p0→a、a→apex、apex→b、b→p1。
+ * 少 push 任何一个 apex 都会退化成「被细分的直线」——周长不涨、维数掉回 1，
+ * 而图形看上去仍是个干净的三角形，所以这条必须靠产物校验，不能靠肉眼看。
+ */
 function kochEdge(p0, p1, depth, spike, center, out) {
   if (depth === 0) {
     out.push(p1);
@@ -36,7 +41,8 @@ function kochEdge(p0, p1, depth, spike, center, out) {
   }
   const {a, b, apex} = bump(p0, p1, spike, center);
   kochEdge(p0, a, depth - 1, spike, center, out);
-  kochEdge(a, b, depth - 1, spike, center, out);
+  kochEdge(a, apex, depth - 1, spike, center, out);
+  kochEdge(apex, b, depth - 1, spike, center, out);
   kochEdge(b, p1, depth - 1, spike, center, out);
 }
 
