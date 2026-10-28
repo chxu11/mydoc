@@ -7,16 +7,83 @@
   margin-bottom: 0.4rem;
 }
 
+/* 副标题随分组变，所以左右两边都留呼吸；文案居中跟 H1 对齐 */
 .subtitle {
   max-width: 44rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.8rem;
   text-align: center;
   font-size: 0.92rem;
   line-height: 1.75;
   color: var(--ifm-color-emphasis-700);
 }
 
-/* 母题切换：一行胶囊，窄屏自然折行 */
+/* H1 与分组按钮之间的一行小注：点明「两组共用一个外壳」 */
+.kicker {
+  max-width: 44rem;
+  margin: 0 auto 1.4rem;
+  text-align: center;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-emphasis-500);
+}
+
+/* 一级：分组。刻意比二级母题胶囊重一档（字号 + 底边线），
+   免得十四件挤成一行、看不出谁是上级 */
+.groups {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+
+.groupTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 40px;
+  padding: 0.45rem 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.groupTab:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-darkest);
+}
+
+.groupTabOn,
+.groupTabOn:hover {
+  border-color: var(--ifm-color-primary-dark);
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-color-primary-dark);
+}
+
+[data-theme='dark'] .groupTab:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+/* 件数角标：让「纹样 7 / 数学 7」自己把体量说清楚 */
+.groupCount {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}
+
+.groupTabOn .groupCount {
+  background: var(--ifm-color-primary);
+  color: var(--ifm-button-color, #fff);
+}
+
+/* 二级母题切换：一行胶囊，窄屏自然折行 */
 .tabs {
   display: flex;
   flex-wrap: wrap;

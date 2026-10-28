@@ -668,3 +668,18 @@ export const MATH_PATTERNS = {
       }；迭代 ${v.iter} 次。边界维数 = 2（Mandelbrot 边界同样是 2）`,
   },
 };
+
+/**
+ * 展示顺序按主题聚类，而不是按正文出现的顺序：
+ * 分形四件（自相似 → 维数）→ 曲线两件（作图规则）→ 波形一件（叠加）。
+ * 新增图形忘了登记也不会消失，只是排在最后（见 src/pages/lab.js）。
+ */
+export const MATH_ORDER = [
+  'koch',
+  'sierpinski',
+  'tree',
+  'julia',
+  'spiral',
+  'bezier',
+  'fourier',
+];

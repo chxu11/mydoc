@@ -74,6 +74,8 @@ import MathLab from '@site/src/components/MathLab';
 
 ## 动手 · 圆规之外，还有两个滑块
 
+同一个外壳（母题 → 参数 → 图形），这里滑的是倍率与控制点：集中试见 [实验室 · 数学组](/lab#spiral)。
+
 <MathLab kind="spiral">
 
 对数螺的定义只有一句：「每转 90°，半径乘同一个倍率 g」。g = 1.618 就是黄金螺
