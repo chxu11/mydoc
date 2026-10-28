@@ -93,6 +93,18 @@ const config = {
             label: '地图',
             position: 'left',
           },
+          // 概念坐标（跨栏目换乘枢纽，按概念重排站点）
+          {
+            to: '/concepts',
+            label: '概念',
+            position: 'left',
+          },
+          // 纹样实验室（母题 → 参数 → 图形，可拖可导出 SVG）
+          {
+            to: '/lab',
+            label: '实验室',
+            position: 'left',
+          },
           // 文档入口（默认打开文档首页 /docs/0）
           {
             to: '/docs/0',

@@ -9,6 +9,8 @@ concepts: [symmetry, order]
 wrapperClassName: pattern-page
 ---
 
+import PatternLab from '@site/src/components/PatternLab';
+
 # 5. Girih · 用五块砖画出无限
 
 *Girih（波斯语 گِرَه，"结"）—— 伊斯兰工匠用**五种带角的瓷砖**拼出的连续几何宇宙。禁止偶像的信仰，逼出了人类最纯粹的抽象装饰。*
@@ -44,6 +46,23 @@ wrapperClassName: pattern-page
 ![Iranian Tiles](https://commons.wikimedia.org/wiki/Special:FilePath/Iranian_Tiles_1.JPG?width=900)
 
 *基贾尔时代的彩釉瓷砖把 Girih 从清真寺带到茶室、庭院、市集。今天伊朗街头抬头还是这个图案。*
+
+---
+
+## 动手 · 先拆出骨架
+
+<PatternLab kind="rosette">
+
+Girih 的五块砖很难一眼看懂，但它背后的骨架极简单：**把圆周 n 等分，再把多边形错位套几层**。
+n=10 就是 al-Kāshī 在 15 世纪算出的十重对称；把 n 调到 5，得到的是与 Penrose 铺砖同族的五重对称；
+n 调到 6 或 8，又会掉回「普通」的周期性对称——真正常见的只有 2/3/4/6，其余都要靠 n 重旋转去硬碰。
+再把「星形跨步」和 n 一起看：两者互质时星形一笔画成，有公约数就会拆成几笔各自闭合——
+滑杆下面那行小字会实时告诉你现在是几笔。
+
+</PatternLab>
+
+「错位半格」这个动作，和 [纹样总览](./01-overview.md) 里说的「平移重复」是同一件事，
+只是这次绕着圆周转。古人用圆规和直尺画它，今天用 `cos / sin` 和 `for` 画它，都是同一套坐标。
 
 ---
 

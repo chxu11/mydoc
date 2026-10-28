@@ -9,6 +9,8 @@ concepts: [wave]
 wrapperClassName: math-page
 ---
 
+import MathLab from '@site/src/components/MathLab';
+
 # 8. 傅里叶 · 把世界拆成频率
 
 *1807 年，Joseph Fourier 在巴黎科学院宣称"**任何**函数（哪怕有跳变）都能用正弦波叠加逼近"。Lagrange 当场反对。两百年后，每次你打开 MP3、JPEG、Wi-Fi，傅里叶都赢了。*
@@ -78,6 +80,19 @@ $$
 | **医学** | MRI、CT、脑电 EEG 全靠傅里叶重构 |
 | **数论** | 素数分布的显式公式与 Riemann ζ 函数用 Fourier 分析工具 |
 | **快速算法** | Cooley–Tukey FFT（1965）把 $O(n^2)$ 变成 $O(n\log n)$—— 20 世纪最重要的算法之一 |
+
+---
+
+## 动手 · 一项一项加上去
+
+<MathLab kind="fourier">
+
+方波只留奇次谐波、幅度按 1/k 收缩；锯齿波全次都留；三角波按 1/k² 收缩，所以它收敛得快得多——
+同样 8 项，三角波已经几乎贴着目标，方波在跳变处还鼓着一个包。
+那个包不会消失：项数加到 1000，超调仍是约 8.9%，这就是 Gibbs 现象。
+打开「各次谐波」，能看见每一根正弦各自在出力，而实线只是它们的累加。
+
+</MathLab>
 
 ---
 

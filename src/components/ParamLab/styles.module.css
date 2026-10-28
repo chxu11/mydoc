@@ -1,0 +1,213 @@
+/* 参数化图形外壳的样式：纹样与数学的 lab 共用 */
+
+.lab {
+  margin: 2rem 0 2.5rem;
+  padding: 1.1rem 1.2rem 1.2rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  /* 站内锚点 / scrollIntoView 时别被固定导航栏压住标题 */
+  scroll-margin-top: 76px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.title {
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+  letter-spacing: 0.02em;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+}
+
+.source {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  color: var(--ifm-color-emphasis-600);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  white-space: nowrap;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.controlLabel {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.value {
+  font-variant-numeric: tabular-nums;
+  color: var(--ifm-font-color-base);
+}
+
+.control input[type='range'] {
+  width: 100%;
+  margin: 0;
+  /* 轨道可视高度不变，靠内边距把可点区域抬到 24px */
+  height: 24px;
+  padding: 4px 0;
+  accent-color: var(--ifm-color-primary);
+}
+
+/* 分段选择（波形 / 形状一类）：比下拉框少一次点击，也不需要图标 */
+.seg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.segItem {
+  font-size: 0.78rem;
+  min-height: 30px;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.segItem:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-font-color-base);
+}
+
+.segOn,
+.segOn:hover {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: var(--ifm-button-color, #fff);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+}
+
+.button {
+  font-size: 0.8rem;
+  min-height: 34px;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.button:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='dark'] .button:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+.primary {
+  border-color: transparent;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-button-color, #fff);
+}
+
+.primary:hover,
+[data-theme='dark'] .primary:hover {
+  background: var(--ifm-color-primary-dark);
+  color: var(--ifm-button-color, #fff);
+}
+
+.info {
+  margin: 0.2rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.canvasWrap {
+  margin: 0;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--ifm-color-emphasis-100);
+  /* 图形的「遮罩底色」（压挑断口、青海波扇面底）取这个值：
+     它必须和画布底色一致，halo 才看不出是补丁 */
+  --lab-canvas-bg: var(--ifm-color-emphasis-100);
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--ifm-font-color-base);
+}
+
+/* 能拖把手的画布：光标 + 禁掉触摸滚动，否则手机上拖不动 */
+.canvasInteractive {
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.painting {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.note {
+  margin-top: 0.9rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--ifm-color-emphasis-300);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-700);
+}
+
+@media screen and (max-width: 760px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
