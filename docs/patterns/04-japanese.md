@@ -5,6 +5,7 @@ mapShort: 和风
 description: 麻叶、市松、青海波——江户时代最流行的三种小纹。看图学名，从 Kumiko 木格栅到浮世绘、从和服到县徽。
 keywords: [麻叶纹, 市松, 青海波, asanoha, ichimatsu, seigaiha, 日本纹样]
 tags: [纹样]
+concepts: [wave]
 wrapperClassName: pattern-page
 ---
 

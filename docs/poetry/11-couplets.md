@@ -5,6 +5,7 @@ mapShort: 名联
 description: 从"海纳百川"到左宗棠挽曾国藩，从岳王庙到大观楼——中文名联里的修身联、挽联、风景联与长联：原文、出处、白话读法与对联格律小课。
 keywords: [对联, 挽联, 左宗棠, 曾国藩, 林则徐, 蒲松龄, 孙髯翁, 大观楼, 格言]
 tags: [诗歌文章]
+concepts: [symmetry]
 wrapperClassName: poetry-page
 ---
 

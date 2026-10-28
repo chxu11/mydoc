@@ -5,6 +5,7 @@ mapShort: 素数
 description: 欧几里得《几何原本》IX.20 的最美证明：只用「加个 1」，就证明了素数永远用不完——经典反证法 + 构造法。
 keywords: [素数, 欧几里得, 反证法, 数论, 算术基本定理]
 tags: [数学]
+concepts: [infinity]
 wrapperClassName: math-page
 ---
 

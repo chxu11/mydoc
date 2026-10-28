@@ -5,6 +5,7 @@ mapShort: 回纹
 description: Meander / Greek Key / 希腊回纹——从雅典陶罐到庞贝地砖、从大英博物馆到 Versace 商标。一条不间断的线如何成为西方文明最耐看的花边。
 keywords: [Greek Key, Meander, 希腊回纹, 马安德, Versace]
 tags: [纹样]
+concepts: [infinity]
 wrapperClassName: pattern-page
 ---
 

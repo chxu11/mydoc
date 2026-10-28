@@ -5,6 +5,7 @@ mapShort: 分形
 description: Mandelbrot、Julia、Koch 雪花、Sierpinski 地毯、Barnsley 羊齿——五条被反复放大的曲线，把"无限的复杂度"关进了一小块平面。
 keywords: [分形, Mandelbrot, Julia, Koch, Sierpinski, Barnsley, 自相似]
 tags: [数学]
+concepts: [infinity, order]
 wrapperClassName: math-page
 ---
 

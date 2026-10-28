@@ -5,6 +5,7 @@ mapShort: Girih
 description: 五种带角的瓷砖拼出十重对称的无限平面。9 世纪巴格达到 15 世纪伊斯法罕，比 Penrose 早五百年触摸到准晶体的秘密。
 keywords: [Girih, 伊斯兰几何, 密铺, 准晶体, Darb-e Imam, al-Kashī]
 tags: [纹样]
+concepts: [symmetry, order]
 wrapperClassName: pattern-page
 ---
 

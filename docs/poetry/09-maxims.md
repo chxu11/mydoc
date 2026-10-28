@@ -5,6 +5,7 @@ mapShort: 格言
 description: 把半生心得压成对仗的句子：王阳明四句教、曾国藩自题联与"花未全开月未圆"、洛克菲勒信里的"墓碑或踏板"——格言为什么偏爱对称，以及引用时的出处纪律。
 keywords: [格言, 对联, 王阳明, 曾国藩, 洛克菲勒, 四句教, 求阙]
 tags: [诗歌文章]
+concepts: [symmetry]
 wrapperClassName: poetry-page
 ---
 

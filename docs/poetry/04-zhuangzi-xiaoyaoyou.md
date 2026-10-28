@@ -5,6 +5,7 @@ mapShort: 庄子
 description: 《庄子》开篇、中文想象力的天花板——鲲鹏展翅、蜩与学鸠、至人无己，一场关于「大小之辩」与「绝对自由」的思想实验。
 keywords: [庄子, 逍遥游, 鲲鹏, 无己, 逍遥, 先秦散文]
 tags: [诗歌文章]
+concepts: [infinity]
 wrapperClassName: poetry-page
 ---
 

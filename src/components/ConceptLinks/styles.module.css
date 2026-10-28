@@ -1,0 +1,42 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--ifm-color-emphasis-300);
+  font-size: 0.875rem;
+}
+
+.label {
+  color: var(--ifm-color-emphasis-600);
+  letter-spacing: 0.06em;
+}
+
+/* 虚线边框呼应地图上的换乘站虚线圈 */
+.chip {
+  padding: 0.2rem 0.7rem;
+  border: 1px dashed var(--ifm-color-emphasis-400);
+  border-radius: 999px;
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.chip:hover {
+  border-style: solid;
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-darkest);
+  text-decoration: none;
+}
+
+[data-theme='dark'] .chip:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+.more {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+}

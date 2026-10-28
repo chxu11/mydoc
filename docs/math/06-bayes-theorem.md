@@ -5,6 +5,7 @@ mapShort: 贝叶斯
 description: P(A|B) = P(B|A)·P(A)/P(B)。一个 18 世纪牧师的笔记，成为今天 AI / 医疗诊断 / 垃圾邮件过滤的地基。附带"检测阳性≠患病"的反直觉题解。
 keywords: [贝叶斯, 条件概率, 先验, 后验, 频率学派, 医学检测]
 tags: [数学]
+concepts: [uncertainty]
 wrapperClassName: math-page
 ---
 

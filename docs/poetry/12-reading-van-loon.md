@@ -5,6 +5,7 @@ mapShort: 房龙
 description: 从贝尔《数学精英》到房龙《人类的故事》《宽容》：传记体学科史背后的人文主义史观——换主角、写思想冲突、写给门外人读；附房龙三大局限的清醒读法。
 keywords: [房龙, 人类的故事, 宽容, 人文主义, 数学史, 贝尔, 无知谷, 随笔]
 tags: [诗歌文章]
+concepts: [dimension]
 wrapperClassName: poetry-page
 ---
 

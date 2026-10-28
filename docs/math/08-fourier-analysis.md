@@ -5,6 +5,7 @@ mapShort: 傅里叶
 description: 任何周期信号都能拆成一堆正弦波。从 1807 年巴黎科学院的争论到 MP3、JPEG、FFT、语音识别——一幅图看懂傅里叶级数怎么"长出来"。
 keywords: [傅里叶, Fourier, 级数, 方波, FFT, 频谱, Gibbs]
 tags: [数学]
+concepts: [wave]
 wrapperClassName: math-page
 ---
 

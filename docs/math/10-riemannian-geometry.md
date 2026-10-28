@@ -5,6 +5,7 @@ mapShort: 黎曼
 description: 当平行公设崩塌，球面与双曲面上三角形内角不再等于 180 度。从 Gauss 曲率到 Einstein 广义相对论，再到今天的 Poincaré 圆盘与深度学习流形。
 keywords: [黎曼几何, 曲率, 双曲, Poincaré, 球面几何, 广义相对论]
 tags: [数学]
+concepts: [dimension]
 wrapperClassName: math-page
 ---
 

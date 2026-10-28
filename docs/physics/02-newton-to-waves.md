@@ -5,6 +5,7 @@ mapShort: 力学
 description: 经典力学核心：牛顿第二定律 F=ma，能量与动量守恒，再过渡到振动与波——理解简谐运动与波动方程直觉。
 keywords: [牛顿, F=ma, 能量守恒, 动量, 振动, 波]
 tags: [物理]
+concepts: [wave]
 ---
 
 # 阶段 2：从牛顿到波

@@ -5,6 +5,7 @@ mapShort: 欧拉
 description: 欧拉公式 e^{ix}=cos x+i sin x 及其两种证明（泰勒级数 / 导数法），并给出最美特例欧拉恒等式 e^{iπ}+1=0 与几何直观（指数上加 i 就是旋转）。
 keywords: [欧拉公式, 欧拉恒等式, e的ix次方, 复数, 泰勒级数, 旋转, 欧拉]
 tags: [数学]
+concepts: [symmetry]
 wrapperClassName: math-page
 ---
 

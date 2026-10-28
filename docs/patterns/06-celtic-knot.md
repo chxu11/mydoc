@@ -5,6 +5,7 @@ mapShort: 绳结
 description: 一条不间断的线绕成没有终点的结。凯尔斯之书、林迪斯法恩福音书、Ardagh 银杯上的 Insular 艺术，一千年后仍是纹身与品牌 Logo 的常客。
 keywords: [凯尔特结, Book of Kells, Lindisfarne, interlace, Insular]
 tags: [纹样]
+concepts: [infinity]
 wrapperClassName: pattern-page
 ---
 
