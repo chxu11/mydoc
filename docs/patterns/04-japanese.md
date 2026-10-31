@@ -8,6 +8,8 @@ tags: [纹样]
 concepts: [wave]
 wrapperClassName: pattern-page
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 import PatternLab from '@site/src/components/PatternLab';
 
@@ -21,7 +23,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 麻叶纹 · Asanoha（前 8 世纪已有，江户普及）
 
-![麻叶 Kumiko](https://commons.wikimedia.org/wiki/Special:FilePath/Asanoha_Kumiko_Pattern.svg?width=900)
+<img src={useBaseUrl("/img/docs/asanoha_kumiko_pattern-w900-7951b8f4.svg")} alt="麻叶 Kumiko" loading="lazy" decoding="async" />
 
 *六角放射的星形，像展开的大麻叶。农民把婴儿背带织上它，祈求孩子"像麻一样长得又快又直"。木格窗（Kumiko）里也叫同名图案。*
 
@@ -29,7 +31,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 麻叶 + 七宝 · 复合变体
 
-![Shippo-Asanoha](https://commons.wikimedia.org/wiki/Special:FilePath/Shippo_Asanoha_Kumiko_Pattern.svg?width=900)
+<img src={useBaseUrl("/img/docs/shippo_asanoha_kumiko_pattern-w900-f9251d8d.svg")} alt="Shippo-Asanoha" loading="lazy" decoding="async" />
 
 *麻叶叠在七宝（相连的圆环）之上，是 Kumiko 木工里最考验手艺的图案之一。*
 
@@ -37,7 +39,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 市松 · Ichimatsu（江户，18 世纪）
 
-![市松方格](https://commons.wikimedia.org/wiki/Special:FilePath/Ichimatsu.JPG?width=900)
+<img src={useBaseUrl("/img/docs/ichimatsu-w900-92d0112d.jpg")} alt="市松方格" loading="lazy" decoding="async" />
 
 *黑白方格交错。得名于江户歌舞伎演员 **佐野川市松**——他 1741 年在《真山崎天狗缘》里穿了一身这种图案戏服，全城模仿，两个月内"市松"成了方格纹的通用名。今天日本警车、出租车、奥运会视觉都还在用。*
 
@@ -45,7 +47,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 青海波 · Seigaiha（6 世纪经朝鲜传入，室町–江户定型）
 
-![青海波示意](https://commons.wikimedia.org/wiki/Special:FilePath/Seigaiha.svg?width=900)
+<img src={useBaseUrl("/img/docs/seigaiha-w900-021f09c5.svg")} alt="青海波示意" loading="lazy" decoding="async" />
 
 *层层同心扇形排列如海面波纹。名字来自"波斯（青海在古日语借自波斯音）传来的波浪纹"，实际经由丝绸之路与朝鲜半岛传入。寓意：**风平浪静的日常**。*
 
@@ -53,7 +55,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 实物版 · 青海波织物
 
-![青海波代表例](https://commons.wikimedia.org/wiki/Special:FilePath/%E6%97%A5%E6%9C%AC%E3%81%AE%E4%BC%9D%E7%B5%B1%E6%96%87%E6%A7%98%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E4%BB%A3%E8%A1%A8%E4%BE%8B%EF%BC%9C%E9%9D%92%E6%B5%B7%E6%B3%A2%EF%BC%8E.jpg?width=900)
+<img src={useBaseUrl("/img/docs/file-w900-9c0100a9.jpg")} alt="青海波代表例" loading="lazy" decoding="async" />
 
 *和服振袖上的青海波——层叠的扇形在曲面上会自然变形，织工要提前算好。*
 

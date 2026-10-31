@@ -35,6 +35,10 @@ jobs:
         run: npm ci
       - name: 构建网站
         run: npm run build
+      # 图片门禁：docs 里不许留 Wikimedia 直链（第三方改名/限流 = 读者看到裂图），
+      # 本地图必须真实存在且登记在 static/img/docs/manifest.json（出处可追溯）
+      - name: 图片本地化校验
+        run: npm run check:images
       # 三层回归：公式解析性质 / 生成器注册表与正文挂载 / 产物里的实际几何
       # 依赖上一步的 build/ 产物，必须排在构建之后
       - name: 实验室回归校验

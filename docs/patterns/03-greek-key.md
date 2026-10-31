@@ -8,6 +8,8 @@ tags: [纹样]
 concepts: [infinity]
 wrapperClassName: pattern-page
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 import PatternLab from '@site/src/components/PatternLab';
 
@@ -19,7 +21,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 母题 · 单线折返的方形螺旋
 
-![Meander 单元示意](https://commons.wikimedia.org/wiki/Special:FilePath/Meander%2C_Greek_Key.png?width=900)
+<img src={useBaseUrl("/img/docs/meander-_greek_key-w900-3f877945.png")} alt="Meander 单元示意" loading="lazy" decoding="async" />
 
 *一条线不断头、不交叉，靠自我折叠铺满水平带。这就是全部秘密。*
 
@@ -27,7 +29,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 古典版 · 双回纹连续带
 
-![Greek Meander 连续版](https://commons.wikimedia.org/wiki/Special:FilePath/Greek_Meander.png?width=900)
+<img src={useBaseUrl("/img/docs/greek_meander-w900-fb3b85e5.png")} alt="Greek Meander 连续版" loading="lazy" decoding="async" />
 
 *雅典几何时期陶罐（前 8 世纪）已经出现成熟形态。到公元前 5 世纪古典时期，成为神庙檐口、马赛克地板的标准边饰。*
 
@@ -35,7 +37,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 庞贝 · 家装地板上的永恒花边
 
-![Meander 希腊回纹示意](https://commons.wikimedia.org/wiki/Special:FilePath/Meander,_Greek_Key.png?width=900)
+<img src={useBaseUrl("/img/docs/meander-_greek_key-w900-eddebe95.png")} alt="Meander 希腊回纹示意" loading="lazy" decoding="async" />
 
 *公元 1 世纪的罗马房主用它镶边——庞贝遗址里到处都是这种黑白马赛克回纹带。*
 

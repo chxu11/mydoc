@@ -7,6 +7,8 @@ keywords: [欧几里得, 几何原本, 黄金分割, 斐波那契, 对数螺, �
 tags: [数学]
 wrapperClassName: math-page
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 import MathLab from '@site/src/components/MathLab';
 
@@ -18,7 +20,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 现存最古老的《几何原本》实物（约公元 100 年）
 
-![P. Oxy. I 29 莎草纸残片](https://commons.wikimedia.org/wiki/Special:FilePath/P._Oxy._I_29.jpg?width=900)
+<img src={useBaseUrl("/img/docs/p._oxy._i_29-w900-9dde0286.jpg")} alt="P. Oxy. I 29 莎草纸残片" loading="lazy" decoding="async" />
 
 *1897 年在埃及奥克西林库斯垃圾堆里出土。画的是《原本》第二卷命题 5—— "$(a+b)(a-b) = a^2 - b^2$" 的几何证明。古希腊人**没有代数符号**，全靠这块图。*
 
@@ -26,7 +28,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 黄金螺 · Golden Spiral
 
-![Golden Spiral](https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Spiral.svg?width=800)
+<img src={useBaseUrl("/img/docs/golden_spiral-w800-d86cb043.svg")} alt="Golden Spiral" loading="lazy" decoding="async" />
 
 *从一个黄金矩形（长宽比 $\varphi = \dfrac{1+\sqrt{5}}{2} \approx 1.618$）里不断切正方形、连四分之一圆。缩放 $\varphi$ 倍自身完全重合 → **自相似对数螺**。*
 
@@ -34,7 +36,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 斐波那契螺 · 用整数长出的曲线
 
-![Fibonacci spiral 34](https://commons.wikimedia.org/wiki/Special:FilePath/Fibonacci_spiral_34.svg?width=800)
+<img src={useBaseUrl("/img/docs/fibonacci_spiral_34-w800-b95bd937.svg")} alt="Fibonacci spiral 34" loading="lazy" decoding="async" />
 
 *正方形边长取 $1,1,2,3,5,8,13,21,34, \ldots$。当 $n \to \infty$，相邻比值 $\to \varphi$——**离散整数列 → 连续对数螺**。*
 
@@ -42,7 +44,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 现实样本 · 鹦鹉螺的横切
 
-![Nautilus shell cutaway](https://commons.wikimedia.org/wiki/Special:FilePath/NautilusCutawayLogarithmicSpiral.jpg?width=800)
+<img src={useBaseUrl("/img/docs/nautiluscutawaylogarithmicspiral-w800-145a95b4.jpg")} alt="Nautilus shell cutaway" loading="lazy" decoding="async" />
 
 *自然界的对数螺。贝壳气室半径按固定角度呈指数增长，是浮力控制的极优解。**鹦鹉螺 ≈ 斐波那契**是流行文化误解——实际比值更接近 1.33，不完全是 $\varphi$，但确实是**对数螺**。*
 

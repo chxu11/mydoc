@@ -8,6 +8,8 @@ tags: [纹样]
 concepts: [infinity]
 wrapperClassName: pattern-page
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 import PatternLab from '@site/src/components/PatternLab';
 
@@ -19,7 +21,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 巅峰 · 凯尔斯之书 fol. 32v「基督御座」（约 800）
 
-![Kells fol 32v](https://commons.wikimedia.org/wiki/Special:FilePath/KellsFol032vChristEnthroned.jpg?width=900)
+<img src={useBaseUrl("/img/docs/kellsfol032vchristenthroned-w900-a7461af5.jpg")} alt="Kells fol 32v" loading="lazy" decoding="async" />
 
 *都柏林圣三一学院藏。整页由数十条粗细交织的绳带、葡萄藤、猫鼠微观场景构成。这一页是凯尔特艺术最著名的图像之一。*
 
@@ -27,7 +29,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 页首 · 凯尔斯之书「马太福音起首」（fol. 29r）
 
-![Kells fol 29r Incipit Matthew](https://commons.wikimedia.org/wiki/Special:FilePath/KellsFol029rIncipitMatthew.jpg?width=900)
+<img src={useBaseUrl("/img/docs/kellsfol029rincipitmatthew-w900-03d8a64b.jpg")} alt="Kells fol 29r Incipit Matthew" loading="lazy" decoding="async" />
 
 *"LIBER GENERATIONIS" 六个字被完全编织进螺旋、动物和十字。字母早已不是字母，是建筑。*
 
@@ -35,7 +37,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 页尾 · 凯尔斯之书「约翰福音起首」（fol. 292r）
 
-![Kells fol 292r Incipit John](https://commons.wikimedia.org/wiki/Special:FilePath/KellsFol292rIncipJohn.jpg?width=900)
+<img src={useBaseUrl("/img/docs/kellsfol292rincipjohn-w900-2e6722ad.jpg")} alt="Kells fol 292r Incipit John" loading="lazy" decoding="async" />
 
 *"IN PRINCIPIO ERAT VERBUM"—— 整页像教堂彩窗，用几何框住神学。*
 
@@ -43,7 +45,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 更早 · 林迪斯法恩福音书（710–720）
 
-![Lindisfarne knotwork](https://commons.wikimedia.org/wiki/Special:FilePath/Meister_des_Book_of_Lindisfarne_002.jpg?width=900)
+<img src={useBaseUrl("/img/docs/meister_des_book_of_lindisfarne_002-w900-c1e609b8.jpg")} alt="Lindisfarne knotwork" loading="lazy" decoding="async" />
 
 *比凯尔斯早 80 年。大英图书馆藏。Eadfrith 修士一人完成大部分页，绳结更粗犷、色彩更克制。*
 

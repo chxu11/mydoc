@@ -8,6 +8,8 @@ tags: [纹样]
 concepts: [order]
 wrapperClassName: pattern-page
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 import PatternLab from '@site/src/components/PatternLab';
 
@@ -19,7 +21,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 源头 · 良渚玉琮兽面纹（约前 3300–前 2300）
 
-![良渚玉琮兽面纹线描](https://zh.wikipedia.org/wiki/Special:FilePath/%E8%89%AF%E6%B8%9A%E7%8D%B8%E9%9D%A2%E7%B4%8B.png?width=900)
+<img src={useBaseUrl("/img/docs/jade_cong_with_sacred_human-animal_motif-w900-5038f699.jpg")} alt="良渚玉琮上的神人兽面纹" loading="lazy" decoding="async" />
 
 *目前所知最早的"回环地纹"。玉琮神人兽面像周围密布细如发丝的卷云线，用燧石尖刻成。*
 
@@ -27,7 +29,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 鼎盛 · 商周青铜器的地纹（约前 1600–前 256）
 
-![云雷纹青铜角（西周）](https://zh.wikipedia.org/wiki/Special:FilePath/%E4%BA%91%E9%9B%B7%E7%BA%B9%E9%9D%92%E9%93%9C%E8%A7%92.JPG?width=900)
+<img src={useBaseUrl("/img/docs/file-w900-4b96f6d6.jpg")} alt="云雷纹青铜角（西周）" loading="lazy" decoding="async" />
 
 *柳州博物馆藏西周青铜角。兽面纹为主纹、云雷纹为地纹——主与地的对比是商周铜器装饰的核心语法。*
 
@@ -35,7 +37,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 南方余响 · 壮族云雷纹铜鼓（唐–宋）
 
-![云雷纹大铜鼓](https://commons.wikimedia.org/wiki/Special:FilePath/%E4%BA%91%E9%9B%B7%E7%BA%B9%E5%A4%A7%E9%93%9C%E9%BC%93.jpg?width=900)
+<img src={useBaseUrl("/img/docs/file-w900-b8ce7d94.jpg")} alt="云雷纹大铜鼓" loading="lazy" decoding="async" />
 
 *中原青铜礼器式微之后，云雷纹在岭南铜鼓上活了下来。鼓面一圈圈同心回纹，是祭雷雨的礼器记忆。*
 

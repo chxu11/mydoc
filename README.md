@@ -15,6 +15,8 @@ npm start         # 本地开发，http://localhost:3000/mydoc/
 npm run build     # 生产构建，产物在 build/
 npm run serve     # 本地预览构建结果
 npm run check:lab # 实验室回归校验（须先 build）
+npm run check:images # 图片门禁：docs 里不许有远程直链（离线即可跑）
+npm run fetch:images # 把 docs 里的 Wikimedia 图搬到 static/img/docs/（需联网）
 ```
 
 > 站点目录常放在外接盘（exFAT）上，首次编译约 1 分钟属正常，不是卡死。
@@ -48,7 +50,8 @@ src/
 scripts/
 ├── gen-tracks.js           # 扫描 docs 生成 tracks/concepts + 契约校验
 ├── gen-tracks-plugin.js    # Docusaurus 插件：构建期自动跑 gen-tracks
-└── check-lab.mjs           # 实验室三层回归校验
+├── check-lab.mjs           # 实验室三层回归校验
+└── fetch-images.mjs        # Wikimedia 图本地化 + manifest 出处 + 门禁
 ```
 
 ---
@@ -101,13 +104,14 @@ scripts/
 
 ## 构建期门禁
 
-以下任一项不满足，`npm run build` 直接失败，不留到线上：
+前两项在 `npm run build` 里就地失败（不留到线上）；后两项是独立命令，但 CI 每次都跑，本地请自行 `npm run check:images && npm run check:lab`：
 
 - **死链 / 错锚点**：`onBrokenLinks: 'throw'`、`onBrokenAnchors: 'throw'`
 - **frontmatter 契约**（`scripts/gen-tracks.js`）：缺 `slug`/`mapShort`、`slug` 与序号不一致、`concepts` 用了词表外的 id、某个概念不足 2 条线路
+- **图片出处**（`npm run check:images`）：docs 里残留 Wikimedia 直链、本地图缺文件/疑似空壳/未登记在 `static/img/docs/manifest.json`
 - **实验室回归**（`npm run check:lab`）：公式解析性质、生成器注册表与正文挂载是否一一对应、产物里 SVG 坐标是否溢出 viewBox / 曲线是否退化
 
-CI 里三步都在：`.github/workflows/deploy.yml`（push 到 `main` 构建并部署，PR 只跑门禁不部署）。
+CI 里四步都在：`.github/workflows/deploy.yml`（push 到 `main` 构建并部署，PR 只跑门禁不部署）。
 
 ---
 
@@ -117,7 +121,11 @@ CI 里三步都在：`.github/workflows/deploy.yml`（push 到 `main` 构建并�
 - 公式用 `$...$` / `$$...$$`（remark-math + katex），警告框用 `:::tip` / `:::warning` / `:::info`
 - 交互图形用现成组件挂载：`<PatternLab kind="leiwen" />`、`<MathLab kind="koch" />`、`<PhysicsLab kind="osc" />`，`kind` 必须已在注册表里且被 `check-lab` 覆盖（全局唯一，深链 `/lab#kind` 靠它）
 - 加一件生成器 = 三处：该栏目 `generators.js` 的注册表 + 同文件的 `*_ORDER` + 某篇正文的挂载点，漏任一处 `check-lab` 会红
-- 图片优先放 `static/`，外链 Wikimedia 图有失效风险
+- **图片一律本地化**，不留远程直链：正文写 Wikimedia 的 `Special:FilePath/…` 只是草稿，跑 `npm run fetch:images` 会把图搬到 `static/img/docs/` 并把引用改成
+  `<img src={useBaseUrl("/img/docs/…")} alt="…" />`，出处逐张记在 `static/img/docs/manifest.json`
+  - 为什么不用 `![alt](/img/docs/…)`：markdown 里以 `/` 开头的图会被 webpack 再抄一份到 `assets/images/`，产物里同一张图存在两份
+  - 为什么必须 `useBaseUrl`：站点挂在 `/mydoc/` 子路径下，裸 `/img/…` 只在 dev server 上正常，上线即 404
+  - 新补的图重跑 `fetch:images` 即可：命名是确定性的（原名 + 请求宽度 + URL 的 sha1 前 8 位），已落地的会跳过
 - 标签保持极简：每篇一个栏目 tag 即可，不维护多层分类
 
 ---

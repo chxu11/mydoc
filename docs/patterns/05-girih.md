@@ -8,6 +8,8 @@ tags: [纹样]
 concepts: [symmetry, order]
 wrapperClassName: pattern-page
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 import PatternLab from '@site/src/components/PatternLab';
 
@@ -19,7 +21,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 五块砖 · Girih Tiles 家族
 
-![Girih 五砖](https://commons.wikimedia.org/wiki/Special:FilePath/Girih_tiles.jpg?width=900)
+<img src={useBaseUrl("/img/docs/girih_tiles-w900-8c4cecf1.jpg")} alt="Girih 五砖" loading="lazy" decoding="async" />
 
 *正十边形、长菱形、短菱形、领结形、菱形——五块砖按角度规则拼接，就能铺满整面墙。所有砖上的线延伸出去自然形成星与多边形。*
 
@@ -27,7 +29,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 实物 · 伊斯法罕 Darb-e Imam 圣祠（1453）
 
-![Darb-e Imam spandrel 十重对称](https://commons.wikimedia.org/wiki/Special:FilePath/Darb-i_Imam_shrine_spandrel.JPG?width=900)
+<img src={useBaseUrl("/img/docs/darb-i_imam_shrine_spandrel-w900-dd11dce6.jpg")} alt="Darb-e Imam spandrel 十重对称" loading="lazy" decoding="async" />
 
 *这面三角拱肩是**最出名的 Girih 实例**：2007 年物理学家 Peter Lu（哈佛）与建筑史学家 Salbaichik 在这里发现了**局部十重对称 + 准晶体周期性**——比苏联数学家彭罗斯（Penrose）1974 年的准晶理论**早了整整五百年**。*
 
@@ -35,7 +37,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 顶峰 · Oljaytu 米哈拉布（1310 年代）
 
-![Oljaytu Mihrab](https://commons.wikimedia.org/wiki/Special:FilePath/Oljaytu_mihrab.jpg?width=900)
+<img src={useBaseUrl("/img/docs/oljaytu_mihrab-w900-73fc297c.jpg")} alt="Oljaytu Mihrab" loading="lazy" decoding="async" />
 
 *苏丹尼耶清真寺的祈祷壁龛，整面由细密 Girih 与库法体经文交织。Wikimedia **特色图片**级作品——伊斯兰几何的巅峰之一。*
 
@@ -43,7 +45,7 @@ import PatternLab from '@site/src/components/PatternLab';
 
 ### 日常版 · 伊朗彩釉瓷砖
 
-![Iranian Tiles](https://commons.wikimedia.org/wiki/Special:FilePath/Iranian_Tiles_1.JPG?width=900)
+<img src={useBaseUrl("/img/docs/iranian_tiles_1-w900-c000c098.jpg")} alt="Iranian Tiles" loading="lazy" decoding="async" />
 
 *基贾尔时代的彩釉瓷砖把 Girih 从清真寺带到茶室、庭院、市集。今天伊朗街头抬头还是这个图案。*
 

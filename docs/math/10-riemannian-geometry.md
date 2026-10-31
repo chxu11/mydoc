@@ -8,6 +8,8 @@ tags: [数学]
 concepts: [dimension]
 wrapperClassName: math-page
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # 10. 黎曼几何 · 空间自己弯曲
 
@@ -17,7 +19,7 @@ wrapperClassName: math-page
 
 ### 球面 · 三角形内角 > 180°
 
-![Spherical triangle 3D](https://commons.wikimedia.org/wiki/Special:FilePath/Spherical_triangle_3d.png?width=700)
+<img src={useBaseUrl("/img/docs/spherical_triangle_3d-w700-aa42b29a.png")} alt="Spherical triangle 3D" loading="lazy" decoding="async" />
 
 *三条测地线（大圆弧）在球面上围出的三角形。**内角和 = 180° + 球面 excess**。地球上的飞行员沿大圆飞，就是走这种三角形的边。*
 
@@ -25,15 +27,15 @@ wrapperClassName: math-page
 
 ### 庞加莱圆盘 · 双曲平面的地图
 
-![Poincaré disk hyperbolic parallel lines](https://commons.wikimedia.org/wiki/Special:FilePath/Poincare_disc_hyperbolic_parallel_lines.svg?width=700)
+<img src={useBaseUrl("/img/docs/ideal-triangle-hyperbolic-tiling-60d4d2ad.svg")} alt="Ideal-triangle hyperbolic tiling in the Poincaré disk" loading="lazy" decoding="async" />
 
-*把整个无限的双曲平面**塞进一个圆盘**。"直线"变成与边界圆正交的弧。注意：**给定点可以画出无穷多条"平行线"**（既不相交也不收敛到同一点）—— 这就是 **Lobachevsky 平行公设的否定**。*
+*把整个无限的双曲平面**塞进一个圆盘**。"直线"变成与边界圆正交的弧，三角形内角和**小于 180°**——图中每个白色理想三角形的三个顶点都落在边界圆上（也就是"无穷远点"）。**给定点可以画出无穷多条"平行线"**（既不相交也不收敛到同一点），这就是 **Lobachevsky 平行公设的否定**。*
 
 ---
 
 ### 复变函数的黎曼面 · 让多值函数变单值
 
-![Riemann surface of sqrt](https://commons.wikimedia.org/wiki/Special:FilePath/Riemann_surface_sqrt.svg?width=600)
+<img src={useBaseUrl("/img/docs/riemann_surface_sqrt-w600-7d17f118.svg")} alt="Riemann surface of sqrt" loading="lazy" decoding="async" />
 
 *$\sqrt{z}$ 在 $z = 0$ 处"绕一圈换一次符号"。黎曼的办法：**再造一层纸，缝上**。走两圈回到原点，函数值才复原。**分支点 + 多叶结构**从此成为拓扑与物理（规范场、弦论）的基本语汇。*
 
@@ -41,7 +43,7 @@ wrapperClassName: math-page
 
 ### 对数函数的无限叶
 
-![Riemann surface of log](https://commons.wikimedia.org/wiki/Special:FilePath/Riemann_surface_log.svg?width=600)
+<img src={useBaseUrl("/img/docs/riemann_surface_log-w600-a6fb140c.svg")} alt="Riemann surface of log" loading="lazy" decoding="async" />
 
 *$\log z$ 每绕原点一周虚部增加 $2\pi$——黎曼面变成**无限螺旋停车坪**。这是解析延拓最直观的形状。*
 

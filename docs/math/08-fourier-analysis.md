@@ -8,6 +8,8 @@ tags: [数学]
 concepts: [wave]
 wrapperClassName: math-page
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 import MathLab from '@site/src/components/MathLab';
 
@@ -19,7 +21,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 核心图 · 用旋转的圆叠加方波
 
-![Fourier square wave epicycles](https://commons.wikimedia.org/wiki/Special:FilePath/Fourier_series_square_wave_circles_animation.svg?width=800)
+<img src={useBaseUrl("/img/docs/fourier_series_square_wave_circles_animation-w800-6e0c7cff.svg")} alt="Fourier square wave epicycles" loading="lazy" decoding="async" />
 
 *方波 = 只保留奇次谐波 $\dfrac{4}{\pi}\sum_{k=1,3,5,\ldots} \dfrac{\sin(kx)}{k}$。每个圆代表一项，半径随 $1/k$ 收缩。*
 
@@ -27,7 +29,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 静态版 · 前 5 项与 15 项逼近
 
-![Square Wave Fourier Series k=5 与 k=15](https://commons.wikimedia.org/wiki/Special:FilePath/Square_Wave_Fourier_Series.svg?width=900)
+<img src={useBaseUrl("/img/docs/square_wave_fourier_series-w900-39658c8e.svg")} alt="Square Wave Fourier Series k=5 与 k=15" loading="lazy" decoding="async" />
 
 *k=5 已经能看出方波轮廓；k=15 逼得更紧——**只在跳变点两侧留下一小段超调**，那就是 **Gibbs 现象**（9% 超调不会消失）。*
 
@@ -35,7 +37,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 彩色版 · 驻波视角
 
-![Fourier Series Square Wave](https://commons.wikimedia.org/wiki/Special:FilePath/Fourier_Series_Square_Wave.svg?width=900)
+<img src={useBaseUrl("/img/docs/fourier_series_square_wave-w900-83ea1e25.svg")} alt="Fourier Series Square Wave" loading="lazy" decoding="async" />
 
 *色盲友好版本，同时展示弦上的驻波。吉他弦被拨动时，振动模式本身就是这一族 sin 函数。*
 
@@ -43,7 +45,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 频谱 · 把波形翻译成"每根频率柱"
 
-![Fourier Spectrum of a Square Wave](https://commons.wikimedia.org/wiki/Special:FilePath/FourierSpectrumOfASquareWave-de.svg?width=800)
+<img src={useBaseUrl("/img/docs/fourierspectrumofasquarewave-de-w800-2af8a52a.svg")} alt="Fourier Spectrum of a Square Wave" loading="lazy" decoding="async" />
 
 *同一支方波在**频率域**里的样子：只有 $f, 3f, 5f, 7f, \ldots$ 上有能量，且幅度按 $1/k$ 递减。*
 

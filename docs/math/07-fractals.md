@@ -8,6 +8,8 @@ tags: [数学]
 concepts: [infinity, order, recursion]
 wrapperClassName: math-page
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 import MathLab from '@site/src/components/MathLab';
 
@@ -19,7 +21,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 主舞台 · Mandelbrot 集
 
-![Mandelbrot set](https://commons.wikimedia.org/wiki/Special:FilePath/Mandelbrot_Set_Image_49.png?width=900)
+<img src={useBaseUrl("/img/docs/mandelbrot_set_image_49-w900-ed36db69.png")} alt="Mandelbrot set" loading="lazy" decoding="async" />
 
 *迭代公式 $z_{n+1} = z_n^2 + c$。黑色区域是"从 0 出发始终不飞向无穷"的 $c$ 值集合。边界处**无限放大永远有新结构**——每一颗小卫星都是整个集合的复刻。*
 
@@ -27,7 +29,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 兄弟 · Julia 集
 
-![Julia set fractal](https://commons.wikimedia.org/wiki/Special:FilePath/Julia_set_fractal.png?width=900)
+<img src={useBaseUrl("/img/docs/julia_set_fractal-w900-bb7fe175.png")} alt="Julia set fractal" loading="lazy" decoding="async" />
 
 *固定 $c$、变动初值 $z_0$。Mandelbrot 集是**所有 Julia 集的地图**：c 落在黑色里 → Julia 连通；c 落在外面 → Julia 碎成康托集式尘埃。*
 
@@ -35,7 +37,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 三条线长成雪花 · Koch Snowflake（1904）
 
-![Koch snowflake](https://commons.wikimedia.org/wiki/Special:FilePath/KochFlake.svg?width=600)
+<img src={useBaseUrl("/img/docs/kochflake-w600-808852ae.svg")} alt="Koch snowflake" loading="lazy" decoding="async" />
 
 *每次把线段的中间三分之一"顶起"成两个尖角。**周长 ×4/3 → 无穷；面积 ×8/5 → 有限**。一条无限长的曲线围出一块有限大小的雪花。*
 
@@ -43,7 +45,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 挖洞的艺术 · Sierpinski 地毯
 
-![Sierpinski carpet](https://commons.wikimedia.org/wiki/Special:FilePath/Sierpinski_carpet_6.svg?width=600)
+<img src={useBaseUrl("/img/docs/sierpinski_carpet_6-w600-3a9c8a07.svg")} alt="Sierpinski carpet" loading="lazy" decoding="async" />
 
 *把正方形九宫格，挖掉中间那块；对剩下 8 块递归。分形维数 ≈ 1.893（介于线与面之间）。Wacław Sierpiński 1916 年的构造。*
 
@@ -51,7 +53,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ### 四条仿射变换生成一株蕨 · Barnsley Fern（1988）
 
-![Barnsley fern explained](https://commons.wikimedia.org/wiki/Special:FilePath/Fractal_fern_explained.png?width=700)
+<img src={useBaseUrl("/img/docs/fractal_fern_explained-w700-e4d80c26.png")} alt="Barnsley fern explained" loading="lazy" decoding="async" />
 
 *只有四个概率化的仿射映射，从一片空白点开始迭代 → 长出一株**逼真的蕨类**。Michael Barnsley 用它证明"自然的形状可以被几行公式压缩"。*
 

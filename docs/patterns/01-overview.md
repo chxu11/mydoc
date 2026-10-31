@@ -7,6 +7,8 @@ keywords: [纹样, 图案, 装饰, 传统, 世界]
 tags: [纹样]
 wrapperClassName: pattern-page
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # 1. 纹样总览 · 一眼看完七件母题
 
@@ -19,7 +21,7 @@ wrapperClassName: pattern-page
 
 ### 中国 · 云雷纹（商周，约前 1600–前 256）
 
-![壮族云雷纹大铜鼓](https://commons.wikimedia.org/wiki/Special:FilePath/%E4%BA%91%E9%9B%B7%E7%BA%B9%E5%A4%A7%E9%93%9C%E9%BC%93.jpg?width=900)
+<img src={useBaseUrl("/img/docs/file-w900-b8ce7d94.jpg")} alt="壮族云雷纹大铜鼓" loading="lazy" decoding="async" />
 
 *回环曲折的方圆线条，刻在青铜礼器与铜鼓之上，是"天象纹"的祖先。*　[→ 详细](./02-cloud-thunder.md)
 
@@ -27,7 +29,7 @@ wrapperClassName: pattern-page
 
 ### 希腊 · Meander / Greek Key（公元前 8 世纪起）
 
-![Greek Key 回纹示意](https://commons.wikimedia.org/wiki/Special:FilePath/Greek_Key.svg?width=900)
+<img src={useBaseUrl("/img/docs/greek_key-w900-14b1b1f8.svg")} alt="Greek Key 回纹示意" loading="lazy" decoding="async" />
 
 *一条不间断的线自我折叠成方形螺旋，象征永恒与秩序。今天 Versace 的 Logo 还是它。*　[→ 详细](./03-greek-key.md)
 
@@ -35,7 +37,7 @@ wrapperClassName: pattern-page
 
 ### 日本 · 麻叶 · 市松 · 青海波（江户，1603–1868）
 
-![麻叶纹](https://commons.wikimedia.org/wiki/Special:FilePath/Asanoha_Kumiko_Pattern.svg?width=900)
+<img src={useBaseUrl("/img/docs/asanoha_kumiko_pattern-w900-7951b8f4.svg")} alt="麻叶纹" loading="lazy" decoding="async" />
 
 *大麻叶的六角星、方格交错的市松、层层扇形的青海波——江户小纹三巨头。*　[→ 详细](./04-japanese.md)
 
@@ -43,7 +45,7 @@ wrapperClassName: pattern-page
 
 ### 伊斯兰 · Girih（塞尔柱起，11 世纪）
 
-![Girih 五块砖](https://commons.wikimedia.org/wiki/Special:FilePath/Girih_tiles.jpg?width=900)
+<img src={useBaseUrl("/img/docs/girih_tiles-w900-8c4cecf1.jpg")} alt="Girih 五块砖" loading="lazy" decoding="async" />
 
 *五种带角的瓷砖拼出无限延展的几何宇宙，15 世纪的 al-Kāshī 已给出十重对称解。*　[→ 详细](./05-girih.md)
 
@@ -51,7 +53,7 @@ wrapperClassName: pattern-page
 
 ### 凯尔特 · 绳结（约 400–800）
 
-![凯尔斯之书 32v 页](https://commons.wikimedia.org/wiki/Special:FilePath/KellsFol032vChristEnthroned.jpg?width=900)
+<img src={useBaseUrl("/img/docs/kellsfol032vchristenthroned-w900-a7461af5.jpg")} alt="凯尔斯之书 32v 页" loading="lazy" decoding="async" />
 
 *交织不断的绳带把基督教福音书织成迷宫，四角圆形与"三角螺旋"共同构成 Insular 艺术。*　[→ 详细](./06-celtic-knot.md)
 
