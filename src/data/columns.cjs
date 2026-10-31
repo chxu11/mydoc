@@ -8,7 +8,6 @@ const columns = [
   {id: 'react', emoji: '💻', group: '编程', name: '前端 (React)', to: '/docs/react/1'},
   {id: 'rust', emoji: '💻', group: '编程', name: 'Rust', to: '/docs/rust/1'},
   {id: 'python', emoji: '💻', group: '编程', name: 'Python', to: '/docs/python/1'},
-  {id: 'java', emoji: '💻', group: '编程', name: 'Java', to: '/docs/java/1'},
   {id: 'patterns', emoji: '🎨', name: '纹样', to: '/docs/patterns/1', cardHint: '世界经典图案'},
   {id: 'math', emoji: '📐', name: '数学', to: '/docs/math/1', cardHint: '经典证明与可视化'},
   {id: 'physics', emoji: '🔭', name: '物理', to: '/docs/physics/1', cardHint: '力学→电磁→热→相对论→量子'},

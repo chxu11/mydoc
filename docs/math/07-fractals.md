@@ -5,7 +5,7 @@ mapShort: 分形
 description: Mandelbrot、Julia、Koch 雪花、Sierpinski 地毯、Barnsley 羊齿——五条被反复放大的曲线，把"无限的复杂度"关进了一小块平面。
 keywords: [分形, Mandelbrot, Julia, Koch, Sierpinski, Barnsley, 自相似]
 tags: [数学]
-concepts: [infinity, order]
+concepts: [infinity, order, recursion]
 wrapperClassName: math-page
 ---
 
@@ -21,7 +21,7 @@ import MathLab from '@site/src/components/MathLab';
 
 ![Mandelbrot set](https://commons.wikimedia.org/wiki/Special:FilePath/Mandelbrot_Set_Image_49.png?width=900)
 
-*迭代公式 $z_{n+1} = z_n^2 + c$。黑色区域是"从 0 出发始终不飞向无穷"的 \(c\) 值集合。边界处**无限放大永远有新结构**——每一颗小卫星都是整个集合的复刻。*
+*迭代公式 $z_{n+1} = z_n^2 + c$。黑色区域是"从 0 出发始终不飞向无穷"的 $c$ 值集合。边界处**无限放大永远有新结构**——每一颗小卫星都是整个集合的复刻。*
 
 ---
 
@@ -60,7 +60,7 @@ import MathLab from '@site/src/components/MathLab';
 ## 分形的三个共同点
 
 - **自相似**：局部与整体形态相似（严格或统计意义）
-- **迭代**：由一条简单规则反复应用产生
+- **迭代**：由一条简单规则反复应用产生——同一条规则在编程线里叫**递归**：[Python · 函数与递归](/docs/python/5) 用 `branch(depth-1)` 两次就长出下面那棵树
 - **非整数维**：Hausdorff 维数不是 1、2、3—— Koch 曲线维数 ≈ 1.26，Sierpinski 地毯 ≈ 1.89
 
 ---
@@ -116,6 +116,21 @@ Mandelbrot 集本身就是「把所有 c 的连通性排成一张图」，所以
 </MathLab>
 
 ---
+
+## 💡 练习题
+
+1. **算一算**：Koch 曲线每迭代一层，段数与单段长度怎么变？$n$ 层后周长是原来的几倍？
+2. **同法**：Sierpinski 地毯每层保留 8 个边长 $1/3$ 的副本，它的维数是多少？
+3. **判连通**：给定参数 $c$，什么时候对应的 Julia 集是连成一片的？
+
+<details>
+<summary>参考答案</summary>
+
+1. 段数 $\times4$、单段长 $\div3$，周长 $\times\frac{4}{3}$；$n$ 层后为 $\left(\frac{4}{3}\right)^n$ 倍，维数 $\log4/\log3\approx1.262$。
+2. $\log8/\log3\approx1.893$。
+3. 当 $c$ 属于 Mandelbrot 集（迭代不逃逸）时连通；在集合外则碎成康托式尘埃。
+
+</details>
 
 :::info[一句话带走]
 

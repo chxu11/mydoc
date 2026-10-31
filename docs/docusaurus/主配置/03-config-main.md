@@ -263,4 +263,12 @@ npm start -- --baseUrl /test/
 5. ✅ **配置代码高亮**：prism
 6. ✅ **可选功能**：搜索、国际化、分析等
 
-需要某个特定功能的详细配置说明吗？比如如何配置版本管理、如何配置 PWA 等？
+:::info 本站只盯三处
+上面字段一大半是默认值。真正改动它们的是三件事：
+
+1. **`SITE_URL` / `BASE_URL`**：部署地址与子路径（本站是 `https://chxu11.github.io` + `/mydoc/`），环境变量可覆盖，sitemap 与分享图 URL 都由它拼出；
+2. **`onBrokenLinks: 'throw'` + `onBrokenAnchors: 'throw'`**：死链和错锚点在构建期直接失败，不留到线上；
+3. **`themeConfig.metadata`**：注入 `og:image` / `twitter:image`，链接分享到 IM 才有卡片图。
+:::
+
+**上一**：[侧边栏配置 · 本站为什么只要 67 行](../02-sidebar-config.md)　·　**下一**：[配置示例合集](./04-config-example.md)

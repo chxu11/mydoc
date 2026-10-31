@@ -15,7 +15,8 @@
  * 栏目显示名来自 src/data/columns.cjs（导航单一事实源）；
  * 颜色与线路类型（code/knowledge）是本脚本内的展示配置。
  * 跳过 intro / docusaurus（非学习主线）。
- * 契约：主线栏目内的 md 必须带 slug + mapShort；concepts 只能是词表内 id，
+ * 契约：主线栏目内的 md 必须带 slug + mapShort；slug 必须等于文件名序号
+ * （进度按 slug 记、站点按序号点亮）；concepts 只能是词表内 id，
  * 且每个概念至少要落在 2 条不同线路上——否则抛错（构建期拦截）。
  * 也可作为模块被 scripts/gen-tracks-plugin.js 调用（generate(docsDir)）。
  */
@@ -34,14 +35,13 @@ const STYLE = {
   react: {color: '#2e8555', kind: 'code'},
   rust: {color: '#b7410e', kind: 'code'},
   python: {color: '#3776ab', kind: 'code'},
-  java: {color: '#f89820', kind: 'code'},
   patterns: {color: '#c2185b', kind: 'knowledge'},
   math: {color: '#5e35b1', kind: 'knowledge'},
   physics: {color: '#00838f', kind: 'knowledge'},
   education: {color: '#ef6c00', kind: 'knowledge'},
   poetry: {color: '#8d6e63', kind: 'knowledge'},
 };
-const SKIP = new Set(['intro', 'docusaurus']);
+const SKIP = new Set(['intro', 'docusaurus', 'java']);
 
 /** 极简 frontmatter 解析：顶层标量 + 单行数组（如 concepts: [infinity, wave]） */
 function parseFrontmatter(content) {
@@ -96,6 +96,13 @@ for (const entry of columns) {
       continue;
     }
     const pos = i + 1;
+    // 进度键契约：客户端按 URL 里的 slug 记「已读」，地图按文件名序号点亮。
+    // 两者必须相等，否则读过的站会点不亮，或者点亮隔壁站。
+    if (String(fm.slug) !== String(pos)) {
+      contractErrors.push(
+        `docs/${dir}/${f}: slug “${fm.slug}” 与文件名序号 ${pos} 不一致（进度按 slug 记录，站点按序号点亮，两者必须相等）`,
+      );
+    }
     // 换乘枢纽：必须取自词表，写错即构建失败（防止概念页出现空锚点）
     const claimed = Array.isArray(fm.concepts) ? [...new Set(fm.concepts)] : [];
     for (const c of claimed) {

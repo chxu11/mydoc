@@ -159,7 +159,7 @@ Python 2 已 EOL，任何环境都统一 `pip3` 或 `python -m pip`，避免装�
 2. VS Code + Pylance 已经能覆盖 90% 的开发体验需求
 3. 一旦养成"新项目 = 新虚拟环境"的习惯，之后不会再遇到"装 A 项目把 B 项目跑崩"的问题
 
-**下一步**：环境就绪后，阶段 3 将带你进入基础语法（变量/类型/控制流）。该部分教程即将上线，先到 [Python 介绍](../python/01-python-intro.md) 回顾一下学习地图。
+**下一步**：环境就绪，进入[阶段 3：变量与控制流](../python/03-variables-control-flow.md)——变量的"贴标签"模型、f-string、`for/else` 与 `match`，还有那个经典的可变默认参数坑。
 
 ---
 

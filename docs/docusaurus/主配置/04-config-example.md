@@ -733,3 +733,7 @@ const multiLangConfig = {
   },
 };
 ```
+
+---
+
+**上一**：[docusaurus.config.js 配置详解](./03-config-main.md)　·　建站参考到此为止，本站的侧边栏实况见[侧边栏配置](../02-sidebar-config.md)。

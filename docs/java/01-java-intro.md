@@ -5,7 +5,13 @@ mapShort: 介绍
 description: Java 学习入门概览：核心语法、面向对象、常用工具链与可持续进阶的学习方法。
 keywords: [Java, 入门, 面向对象, 学习方法]
 tags: [Java]
+draft: true
 ---
+
+<!-- 2026-10 撤线：Java 只有这一篇空壳，已从 columns.cjs / sidebars / 学习地图摘除。
+     保留文件作为草稿（draft: true 只进本地 npm start，不进生产构建）；
+     若要重启这条线，按 README「新增一个栏目」的五步补齐至少 3 篇再恢复登记。 -->
+
 # 阶段1：Java 是什么
 
 ## 🎯 学习目标

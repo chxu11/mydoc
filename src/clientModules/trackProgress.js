@@ -4,9 +4,13 @@
  */
 
 import {markRead} from '@site/src/utils/progress';
+import {tracks} from '@site/src/data/tracks';
 
-const STATION_RE =
-  /\/docs\/(react|rust|python|patterns|math|physics|education|poetry)\/(\d+)/;
+// 线路 id 从 tracks 派生：新增/删除栏目时进度追踪自动跟随，
+// 不再维护一份手写目录清单（历史上漏过 java，导致该线永远点不亮）。
+const STATION_RE = new RegExp(
+  `/docs/(?:${tracks.map((t) => t.id).join('|')})/(\\d+)`,
+);
 
 export function onRouteDidUpdate({location}) {
   if (!location?.pathname) {

@@ -14,6 +14,10 @@ import {
   MATH_ORDER,
   MATH_PATTERNS,
 } from '@site/src/components/MathLab/generators';
+import {
+  PHYSICS_ORDER,
+  PHYSICS_PATTERNS,
+} from '@site/src/components/PhysicsLab/generators';
 
 import styles from './lab.module.css';
 
@@ -26,7 +30,7 @@ function ordered(order, registry) {
 }
 
 /**
- * 两组共用同一个外壳（母题 → 参数 → 图形），所以做成一页两级切换，
+ * 三组共用同一个外壳（母题 → 参数 → 图形），所以做成一页三级切换，
  * 而不是复制出一个 /math-lab —— 「它们是同一套机制」这件事本身就是页面要讲的内容。
  *
  * kind 约定：全页唯一。深链 /lab#<kind> 会跨组按 key 查找，
@@ -95,6 +99,34 @@ const GROUPS = [
       </>
     ),
   },
+  {
+    id: 'physics',
+    label: '物理',
+    subtitle:
+      '物理的图形不是画出来的，是方程的解。这一组的滑杆全是带单位的量（ζ、Δf、T、V₀），下面那行小字报的数字每次拖动都重算一遍——公式实现由 scripts/check-lab.mjs 拿解析性质对撞，所以「看着像」不算过关。',
+    registry: PHYSICS_PATTERNS,
+    kinds: ordered(PHYSICS_ORDER, PHYSICS_PATTERNS),
+    docs: {
+      osc: {to: '/docs/physics/2/', label: '从牛顿到波 · 简谐运动'},
+      beat: {to: '/docs/physics/2/', label: '从牛顿到波 · 从振动到波'},
+      maxwell: {to: '/docs/physics/4/', label: '热与熵 · 温度是什么'},
+      planck: {to: '/docs/physics/6/', label: '量子力学 · 能量是一份份的'},
+      tunnel: {to: '/docs/physics/6/', label: '量子力学 · 概率云'},
+    },
+    // 新加一件却忘了登记正文时兜回主线起点，不让页面崩
+    fallbackDoc: {to: '/docs/physics/1/', label: '物理地图'},
+    noteSvg:
+      '曲线是方程的数值解，坐标框与文字同样只走 currentColor；导出 SVG 后可以直接拖进文档继续标注。',
+    footnote: (
+      <>
+        五件图形来自 <Link to="/docs/physics/2/">从牛顿到波</Link>、
+        <Link to="/docs/physics/4/">热与熵</Link>、
+        <Link to="/docs/physics/6/">量子力学</Link> 三篇的「动手」小节；
+        阻尼振动与拍频属于力学，速率分布与黑体谱属于热学，隧穿属于量子——
+        顺序就是正文的线路。
+      </>
+    ),
+  },
 ];
 
 const ALL_KINDS = GROUPS.flatMap((g) => g.kinds);
@@ -140,14 +172,14 @@ export default function LabPage() {
   return (
     <Layout
       title="参数化实验室"
-      description="十四件图形做成可以拖的参数：纹样七母题（云雷、回纹、麻叶、市松、青海波、Girih 星盘、凯尔特交织）与数学七件（Koch、Sierpinski、分形树、Julia 集、螺线、贝塞尔、傅里叶级数），实时重画并导出。">
+      description="十九件图形做成可以拖的参数：纹样七母题（云雷、回纹、麻叶、市松、青海波、Girih 星盘、凯尔特交织）、数学七件（Koch、Sierpinski、分形树、Julia 集、螺线、贝塞尔、傅里叶级数）、物理五件（阻尼振动、拍频、麦克斯韦速率分布、黑体谱、势垒穿透），实时重画并导出。">
       <main className={styles.page}>
         <div className="container">
           <Heading as="h1" className={styles.title}>
             参数化实验室
           </Heading>
           <p className={styles.kicker}>
-            纹样七件 + 数学七件 · 同一套外壳（母题 → 参数 → 图形）
+            纹样七件 + 数学七件 + 物理五件 · 同一套外壳（母题 → 参数 → 图形）
           </p>
 
           <div className={styles.groups} role="group" aria-label="实验室分组">

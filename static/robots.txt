@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 站点部署在 GitHub Pages 的 /mydoc/ 子路径；自定义域名或 Qoder Sites 部署时按需改这一行
+Sitemap: https://chxu11.github.io/mydoc/sitemap.xml

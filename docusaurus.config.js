@@ -2,22 +2,29 @@
 const { themes } = require('prism-react-renderer');
 const {navbarDropdownItems, footerLearningItems} = require('./src/data/columns.cjs');
 
+// 站点地址可在部署时用环境变量覆盖（GitHub Pages / Qoder Sites 共用一份配置）
+const SITE_URL = process.env.SITE_URL || 'https://chxu11.github.io';
+const BASE_URL = process.env.SITE_BASE_URL || '/mydoc/';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '胖头鱼学习网站',
   tagline: '跨学科学习平台 · 编程 / 纹样 / 数学 / 物理 / 教育 / 诗歌文章',
   favicon: 'img/favicon.ico',
 
-  url: process.env.SITE_URL || 'https://chxu11.github.io',
+  url: SITE_URL,
   // baseUrl  需要改成你的仓库名，如果你启用了GitHub Pages，请改成你的仓库名,默认是/
   // 部署到独立站点（如 Qoder Sites）时用 SITE_BASE_URL=/ 覆盖，避免静态资源指向 /mydoc/
-  baseUrl: process.env.SITE_BASE_URL || '/mydoc/',
+  baseUrl: BASE_URL,
   // 必须显式设置：不设置时 Docusaurus 走 legacy 分支，文件产出为「目录/index.html」，
   // 但 Link.js 不给 href 补尾斜杠。静态网关（GitHub Pages / Qoder Sites）不会自动补斜杠，
   // 于是站内所有链接刷新/直接访问都会 404。设为 true 后 href 与产物布局一致。
   trailingSlash: true,
   // 对于死链接，默认是warn，可以改成其他的选项，比如ignore,throw
   onBrokenLinks: 'throw',
+  // 锚点也按死链处理：/concepts#id 与 /lab#kind 是手写锚点（已在页面里 collectAnchor 登记），
+  // 保持 throw 才能在改标题/改 kind 时立刻发现断锚点
+  onBrokenAnchors: 'throw',
 
   i18n: {
     defaultLocale: 'zh-CN',
@@ -80,6 +87,17 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // 分享卡片：Docusaurus 只输出 twitter:card，不会自动补图，这里显式给一张
+      metadata: [
+        {
+          property: 'og:image',
+          content: `${SITE_URL}${BASE_URL}img/docusaurus-social-card.jpg`,
+        },
+        {
+          name: 'twitter:image',
+          content: `${SITE_URL}${BASE_URL}img/docusaurus-social-card.jpg`,
+        },
+      ],
       navbar: {
         title: '胖头鱼学习网站',
         logo: {

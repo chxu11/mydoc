@@ -5,6 +5,9 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "gen-tracks": "node scripts/gen-tracks.js",
+    "check:lab": "node scripts/check-lab.mjs",
+    "fetch:images": "node scripts/fetch-images.mjs",
+    "check:images": "node scripts/fetch-images.mjs --check",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",

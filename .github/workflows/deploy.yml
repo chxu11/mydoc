@@ -35,6 +35,10 @@ jobs:
         run: npm ci
       - name: 构建网站
         run: npm run build
+      # 三层回归：公式解析性质 / 生成器注册表与正文挂载 / 产物里的实际几何
+      # 依赖上一步的 build/ 产物，必须排在构建之后
+      - name: 实验室回归校验
+        run: npm run check:lab
 
       - name: 上传构建产物
         if: github.event_name != 'pull_request'

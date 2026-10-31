@@ -44,7 +44,7 @@ function column(dirName) {
 }
 
 /** 「编程」聚合栏下的子栏目（数组顺序即显示顺序） */
-const CODE_COLUMNS = ['react', 'rust', 'python', 'java', 'docusaurus'];
+const CODE_COLUMNS = ['react', 'rust', 'python', 'docusaurus'];
 
 /** 顶层独立栏目（数组顺序即显示顺序） */
 const KNOWLEDGE_COLUMNS = ['patterns', 'math', 'physics', 'education', 'poetry'];

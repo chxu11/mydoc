@@ -1,449 +1,133 @@
-# Docusaurus 教程网站完整搭建指南
+# 胖头鱼学习网站
 
-## 1. 初始化项目
+一个 Docusaurus 3 搭建的中文学习站：**8 条知识线路 + 学习地图 + 可交互生成器（实验室）+ 阅读进度追踪**，部署在 GitHub Pages 的 `/mydoc/` 子路径。
+
+- 线上地址：<https://chxu11.github.io/mydoc/>
+- 内容范围：前端（React）/ Rust / Python / 建站参考 / 纹样 / 数学 / 物理 / 教育 / 诗歌文章
+
+---
+
+## 快速开始
 
 ```bash
-# 使用 npx 创建项目（推荐）
-npx create-docusaurus@latest my-tutorial-site classic
-
-# 或使用 npm
-npm init docusaurus@latest my-tutorial-site classic
-
-# 进入项目目录
-cd my-tutorial-site
-
-# 安装依赖
-npm install
-
-# 启动本地开发服务器
-npm run start
-http://localhost:3000/mydoc/
+npm ci            # 安装依赖（Node >= 20）
+npm start         # 本地开发，http://localhost:3000/mydoc/
+npm run build     # 生产构建，产物在 build/
+npm run serve     # 本地预览构建结果
+npm run check:lab # 实验室回归校验（须先 build）
 ```
 
-## 2. 项目结构
+> 站点目录常放在外接盘（exFAT）上，首次编译约 1 分钟属正常，不是卡死。
 
-```
-my-tutorial-site/
-├── docs/                    # 文档 Markdown 文件
-│   ├── intro.md
-│   ├── javascript/
-│   │   ├── intro.md
-│   │   ├── history.md
-│   │   ├── basic-syntax.md
-│   │   ├── data-types.md
-│   │   └── ...
-│   ├── python/
-│   └── java/
-├── blog/                    # 博客文章（可选）
-├── src/
-│   ├── components/         # 自定义 React 组件
-│   ├── css/               # 全局样式
-│   └── pages/             # 自定义页面
-├── static/                 # 静态资源（图片、字体等）
-│   └── img/
-├── docusaurus.config.js    # 主配置文件
-├── sidebars.js            # 侧边栏配置
-└── package.json
-```
-
-## 3. 主配置文件 (docusaurus.config.js)
-
-```javascript
-// @ts-check
-const {themes} = require('prism-react-renderer');
-
-/** @type {import('@docusaurus/types').Config} */
-const config = {
-  title: '胖头鱼学习网站',
-  tagline: '编程教程学习平台',
-  favicon: 'img/favicon.ico',
-  
-  url: 'https://your-domain.com',
-  baseUrl: '/',
-  
-  onBrokenLinks: 'throw',
-  
-  i18n: {
-    defaultLocale: 'zh-CN',
-    locales: ['zh-CN'],
-  },
-
-  presets: [
-    [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-        },
-        blog: false, // 禁用博客
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      }),
-    ],
-  ],
-
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: '胖头鱼学习网站',
-        logo: {
-          alt: 'Logo',
-          src: 'img/logo.svg',
-        },
-        items: [
-          {
-            to: '/docs/javascript/intro',
-            label: 'JavaScript教程',
-            position: 'left',
-          },
-          {
-            to: '/docs/python/intro',
-            label: 'Pythont教程',
-            position: 'left',
-          },
-          {
-            href: 'https://github.com/your-repo',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      
-      footer: {
-        style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} 胖头鱼学习网站`,
-      },
-      
-      prism: {
-        theme: themes.github,
-        darkTheme: themes.nightOwl,
-      },
-    }),
-};
-
-module.exports = config;
-```
-
-## 4. 侧边栏配置 (sidebars.js)
-
-```javascript
-// @ts-check
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
-
-
- /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
-const sidebars = {
-  tutorialSidebar: [
-    'intro',
-    {
-      type: 'category',
-      label: 'JavaScript教程',
-      items: [
-        'javascript/intro',
-        'javascript/basic-syntax',
-      ],
-    },
-  ],
-  pythonSidebar: [
-    'intro',
-    {
-      type: 'category',
-      label: 'python教程',
-      items: [
-        'python/intro',
-        'python/basic-syntax',
-      ],
-    },
-  ],
-};
-
-module.exports = sidebars;
-```
-
-## 5. 创建示例 Markdown 文档
-
-### docs/javascript/basic-syntax.md
-
-```markdown
----
-sidebar_position: 3
-title: 基本语法
 ---
 
-# 基本语法
+## 目录结构（只列关键部分）
 
-JavaScript 的执行单位为行（line），也就是一行一行地执行。一般情况下，每一行就是一个语句。
+```
+docs/                       # 正文，目录 = 栏目，文件名数字前缀 = 站点顺序
+├── intro/                  # 导览（不进学习地图）
+├── react/  rust/  python/  docusaurus/     # 编程线
+├── patterns/  math/  physics/  education/  poetry/   # 知识线
+└── <栏目>/_category_.json  # 该栏目的侧边栏显示名与折叠状态
 
-:::tip 提示
-让JavaScript引擎自动在分号某种情况下会改变程序的语义，导致运行结果与期望不一致。在本教程中，我们不会省略，所有语句都会添加。
-:::
+src/
+├── data/
+│   ├── columns.cjs         # 栏目入口的单一事实源（导航/页脚/首页）
+│   ├── concepts.cjs        # 换乘枢纽（概念）词表
+│   ├── tracks.json         # ← 生成物：线路与站点
+│   └── concepts.json       # ← 生成物：概念坐标
+├── components/
+│   ├── MetroMap/           # 学习地图（地铁图）
+│   ├── PatternLab/  MathLab/  PhysicsLab/  # 参数化生成器（docs 里 <PhysicsLab kind="osc"/> 挂载）
+│   ├── ParamLab/             # 三组共用的交互外壳 + geometry.js（480×320 画布约定）
+├── pages/                  # 首页 /concepts /lab /map
+├── clientModules/
+│   └── trackProgress.js    # 按 URL slug 记阅读进度（localStorage）
+└── theme/                  # swizzle 出来的主题覆盖
 
-例如，下面的一行代码就是一个完整的赋值语句：
-
-```javascript
-var x = 1;
+scripts/
+├── gen-tracks.js           # 扫描 docs 生成 tracks/concepts + 契约校验
+├── gen-tracks-plugin.js    # Docusaurus 插件：构建期自动跑 gen-tracks
+└── check-lab.mjs           # 实验室三层回归校验
 ```
 
-下面的一行代码是一个字符串，但仍然可以视为一个完整的语句：
-
-```javascript
-'Hello, world';
-```
-
-下面的一行代码包含两个语句，每个语句用 `;` 表示语句结束：
-
-```javascript
-var x = 1; var y = 2; // 不建议一行写多个语句！
-```
-
-## 语句块
-
-语句块是一组语句的集合，例如，下面的代码先做了一个判断，如果判断成立，将执行 `{...}` 中的所有语句：
-
-```javascript
-if (2 > 1) {
-  x = 1;
-  y = 2;
-  z = 3;
-}
-```
-
-:::note 注意
-语句块中的语句应该适当缩进，通常使用 2 个或 4 个空格。
-:::
-
-## 注释
-
-JavaScript 支持两种注释方式：
-
-```javascript
-// 单行注释
-
-/*
-  多行注释
-  可以写多行
-*/
-```
-```
-
-### docs/javascript/intro.md
-
-```markdown
----
-sidebar_position: 1
-slug: /javascript/intro
 ---
 
-# JavaScript 简介
+## 三条「单一事实源」
 
-欢迎来到 JavaScript 教程！
+| 单据 | 管什么 | 谁读它 |
+|---|---|---|
+| `src/data/columns.cjs` | 栏目存在、显示名、入口链接、卡片提示 | 导航下拉、页脚、首页卡片 |
+| `src/data/concepts.cjs` | 换乘枢纽的词表与介绍文案 | 概念页、`gen-tracks` 校验 |
+| `docs/<栏目>/_category_.json` | 该栏目在左侧边栏的名字与折叠状态 | `sidebars.js` 的 `column()` |
 
-## 什么是 JavaScript？
+`sidebars.js` 只是薄层（约 67 行）：声明栏目顺序与「编程」聚合栏，正文一律 `autogenerated`。
 
-JavaScript 是一种轻量级的编程语言，主要用于：
+---
 
-- 网页交互
-- 前端开发
-- 后端开发（Node.js）
-- 移动应用开发
+## 新增一篇文档
 
-## 学习路线
+1. 在对应栏目下建 `NN-英文短名.md`，`NN` 接续现有最大序号；
+2. frontmatter 必填 `title`、`slug`、`mapShort`，且 **`slug` 必须等于文件名序号**：
 
-1. 基础语法
-2. 数据类型
-3. 函数
-4. 对象和数组
-5. 异步编程
-6. DOM 操作
-
-## 开始学习
-
-让我们从[基本语法](./basic-syntax.md)开始吧！
-```
-
-## 6. 自定义样式 (src/css/custom.css)
-
-```css
-:root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
-
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
-
-/* 自定义代码块样式 */
-.prism-code {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* 侧边栏样式调整 */
-.menu__link--active {
-  font-weight: 600;
-}
-```
-
-## 7. package.json 脚本
-
-```json
-{
-  "name": "my-tutorial-site",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
-    "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
-    "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
-  }
-}
-```
-
-## 8. 常用命令
-
-```bash
-# 启动开发服务器（热重载）
-npm start
-
-# 构建生产版本
-npm run build
-
-# 本地预览构建结果
-npm run serve
-
-# 清除缓存
-npm run clear
-```
-
-## 9. 部署
-
-### 部署到 GitHub Pages
-
-本项目通过 GitHub Actions 自动部署，配置见 `.github/workflows/deploy.yml`：
-
-1. 在仓库 `Settings → Pages → Source` 选择 **GitHub Actions**
-2. 确认 `docusaurus.config.js` 中 `url` 与 `baseUrl` 正确：
-   ```js
-   url: 'https://<用户名>.github.io',
-   baseUrl: '/<仓库名>/',
+   ```yaml
+   ---
+   title: 13.标题
+   slug: '13'
+   mapShort: 短名       # 学习地图上显示的站名，宜 2–4 字
+   description: 一句话摘要
+   keywords: [a, b, c]
+   tags: [数学]
+   concepts: [infinity]  # 可选，只能用 concepts.cjs 里的 id
+   ---
    ```
-3. 推送到 `main` 分支即自动触发构建与部署（也可在 Actions 页面手动触发）
-4. 访问 `https://<用户名>.github.io/<仓库名>/`
 
-### 部署到 Vercel / Netlify
+3. 文末用统一格式接上线性导航：`**上一**：[标题](./12-xxx.md)　·　**下一**：[标题 →](./14-xxx.md)`；
+4. 跑 `npm run gen-tracks` 确认契约通过（报错会指名是哪个文件哪一条）。
 
-1. 将代码推送到 Git 仓库
-2. 在 Vercel/Netlify 中导入项目
-3. 构建命令：`npm run build`
-4. 输出目录：`build`
-
-## 10. 添加新文档的工作流程
-
-```bash
-# 1. 创建新的 Markdown 文件
-touch docs/javascript/new-topic.md
-
-# 2. 添加 frontmatter
----
-sidebar_position: 10
-title: 新主题
 ---
 
-# 3. 在 sidebars.js 中添加引用（如果需要）
+## 新增一个栏目（五处，顺序不能换）
 
-# 4. 保存后自动热重载，查看效果
+1. 建 `docs/<id>/` + `_category_.json` + 第一篇文档；
+2. `sidebars.js`：id 加进 `CODE_COLUMNS` 或 `KNOWLEDGE_COLUMNS`；
+3. `src/data/columns.cjs`：加一行（导航、页脚、首页入口随之出现）；
+4. `scripts/gen-tracks.js` 的 `STYLE`：加 `{color, kind}`（否则地图上不会画这条线）；
+5. `npm run build` 验证。
 
-# 5. 提交并推送，GitHub Actions 会自动构建并部署
-git add .
-git commit -m "docs: 新增主题"
-git push
-```
+进度追踪自动跟随 `tracks`，不需要再改第 6 处——`trackProgress.js` 的匹配正则由线路 id 派生。
 
-## 11. Markdown 增强功能
+---
 
-Docusaurus 支持丰富的 Markdown 语法：
+## 构建期门禁
 
-```markdown
-:::tip 提示
-这是一个提示框
-:::
+以下任一项不满足，`npm run build` 直接失败，不留到线上：
 
-:::warning 警告
-这是一个警告框
-:::
+- **死链 / 错锚点**：`onBrokenLinks: 'throw'`、`onBrokenAnchors: 'throw'`
+- **frontmatter 契约**（`scripts/gen-tracks.js`）：缺 `slug`/`mapShort`、`slug` 与序号不一致、`concepts` 用了词表外的 id、某个概念不足 2 条线路
+- **实验室回归**（`npm run check:lab`）：公式解析性质、生成器注册表与正文挂载是否一一对应、产物里 SVG 坐标是否溢出 viewBox / 曲线是否退化
 
-:::danger 危险
-这是一个危险提示
-:::
+CI 里三步都在：`.github/workflows/deploy.yml`（push 到 `main` 构建并部署，PR 只跑门禁不部署）。
 
-:::note 注意
-这是一个注意事项
-:::
+---
 
-:::info 信息
-这是一个信息框
-:::
+## 写作约定
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+- 每篇结构：`🎯 学习目标` → 正文（含「一句话比喻」）→ `✅ 小结/总结` → `💡 练习题`（3 题 + `<details>` 折叠答案）→ 上一/下一导航
+- 公式用 `$...$` / `$$...$$`（remark-math + katex），警告框用 `:::tip` / `:::warning` / `:::info`
+- 交互图形用现成组件挂载：`<PatternLab kind="leiwen" />`、`<MathLab kind="koch" />`、`<PhysicsLab kind="osc" />`，`kind` 必须已在注册表里且被 `check-lab` 覆盖（全局唯一，深链 `/lab#kind` 靠它）
+- 加一件生成器 = 三处：该栏目 `generators.js` 的注册表 + 同文件的 `*_ORDER` + 某篇正文的挂载点，漏任一处 `check-lab` 会红
+- 图片优先放 `static/`，外链 Wikimedia 图有失效风险
+- 标签保持极简：每篇一个栏目 tag 即可，不维护多层分类
 
-<Tabs>
-  <TabItem value="js" label="JavaScript">
-    ```javascript
-    console.log('Hello');
-    ```
-  </TabItem>
-  <TabItem value="py" label="Python">
-    ```python
-    print('Hello')
-    ```
-  </TabItem>
-</Tabs>
-```
+---
 
-## 12. 插件推荐
+## 部署
+
+推送到 `main` 即由 GitHub Actions 构建并部署到 GitHub Pages。换域名或改子路径时只动 `docusaurus.config.js` 顶部的两个常量（也可用环境变量覆盖）：
 
 ```bash
-# 搜索插件
-npm install --save @docusaurus/theme-search-algolia
-
-# 图片优化
-npm install --save @docusaurus/plugin-ideal-image
-
-# 代码块功能增强
-npm install --save @docusaurus/theme-live-codeblock
+SITE_URL=https://your.domain SITE_BASE_URL=/ npm run build
 ```
-## 13. 更新
-> 每次更新新的文档，只需要改动 侧边栏（sidebars.js）和导航栏(docusaurus.config.js)的配置
 
-现在你就可以：
-1. 在 `docs/` 目录下添加 `.md` 文件
-2. 运行 `npm start` 实时预览
-3. 运行 `npm run build` 生成静态网站
-4. 部署到服务器或静态托管平台
+`static/robots.txt` 里的 sitemap 地址需与 `SITE_URL` + `SITE_BASE_URL` 保持一致。

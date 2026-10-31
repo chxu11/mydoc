@@ -158,7 +158,7 @@ git-fetch-with-cli = true
 2. VS Code + rust-analyzer 是当下最省心的 Rust 编辑器组合
 3. 装好后立刻配国内镜像，否则第一次 `cargo build` 会慢到怀疑人生
 
-**下一步**：完成 Rust 环境搭建后，就可以进入阶段 3——变量与类型、所有权。该部分教程即将上线，先到 [Rust 介绍](../rust/01-rust-intro.md) 回顾一下学习地图。
+**下一步**：环境装好，进入[阶段 3：变量与类型](../rust/03-variables-types.md)——默认不可变、`mut` 与 shadowing 的差别，以及"几乎所有东西都是表达式"这个思维转弯。
 
 ---
 

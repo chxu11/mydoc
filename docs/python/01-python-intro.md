@@ -49,17 +49,19 @@ tags: [Python]
     ↓
 阶段2 → 环境搭建：pyenv 管版本，uv / poetry 管依赖
     ↓
-阶段3 → 基础语法：变量、类型、控制流、函数
+阶段3 → 基础语法：变量、类型、控制流
     ↓
 阶段4 → 数据结构：list / dict / set / tuple 的复杂度直觉
     ↓
-阶段5 → 面向对象 & 模块包
+阶段5 → 函数与递归：def 三件套、基例与调用栈、汉诺塔 / 目录树 / 分形树
     ↓
-阶段6 → ⭐ 装饰器 / 生成器 / 上下文管理器（Python 味儿的三件套）
+阶段6 → 面向对象 & 模块包
     ↓
-阶段7 → 标准库精选：pathlib / datetime / json / re
+阶段7 → ⭐ 装饰器 / 生成器 / 上下文管理器（Python 味儿的三件套）
     ↓
-阶段8 → 异步：asyncio / aiohttp
+阶段8 → 标准库精选：pathlib / datetime / json / re
+    ↓
+阶段9 → 异步：asyncio / aiohttp
     ↓
 实战 → 爬虫 → 数据分析小报告 → FastAPI 小服务
 ```

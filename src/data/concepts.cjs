@@ -46,6 +46,12 @@ const concepts = [
     blurb:
       '密铺的秩序、分形在混沌边缘的自相似、熵增给出的时间箭头——结构如何生成，又如何耗散。',
   },
+  {
+    id: 'recursion',
+    label: '递归与自相似',
+    blurb:
+      '同一条规则缩小着用：Python 里是「基例 + 缩小 + 调用栈」，数学里是归纳法的多米诺与分形的自相似——程序与证明在这里是同一件事的两种写法。',
+  },
 ];
 
 const conceptById = Object.fromEntries(concepts.map((c) => [c.id, c]));
